@@ -1,18 +1,18 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public static GameManager Instance;
+    
+    [SerializeField] private Transform _groundPlane;
 
-    // Update is called once per frame
-    void Update()
+    public static void SetGroundPlane(Vector3 pos, Quaternion rot) => Instance._groundPlane.SetPositionAndRotation(pos, rot);
+
+    private void Awake()
     {
-        
+        Instance = this;
     }
 }

@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4169582747025834}
   - component: {fileID: 114015790878076588}
-  - component: {fileID: 4886117488932545983}
   m_Layer: 0
   m_Name: PlaneIndicator
   m_TagString: Untagged
@@ -55,19 +54,6 @@ MonoBehaviour:
   mPlaneReference: {fileID: 0}
   mMidAirReference: {fileID: 0}
   mPreview: {fileID: 0}
---- !u!114 &4886117488932545983
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1353731089078378}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 254cea3749b7c164aa587b7bf6cf7601, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _groundPlane: {fileID: 0}
 --- !u!1 &1497045824638220
 GameObject:
   m_ObjectHideFlags: 0

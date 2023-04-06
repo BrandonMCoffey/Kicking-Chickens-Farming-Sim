@@ -7,6 +7,9 @@ namespace Economy
     {
         private int _eggsAmount;
         
+        private DateTime _previousTime;
+        
+        
         public void AddEggs(int amount)
         {
             _eggsAmount += amount;
@@ -36,9 +39,22 @@ namespace Economy
             }
             else
             {
-                throw new Exception("Not enough eggs");
+                Debug.Log("Not enough eggs");
             }
         }
+
+        public DateTime GetTime()
+        {
+            _previousTime = DateTime.Now;
+            return DateTime.Now;
+        }
+        
+        public TimeSpan ComparedTime()
+        {
+            return _previousTime.Subtract(DateTime.Now);
+        }
+        
+        
         
         
     }

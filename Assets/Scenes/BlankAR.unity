@@ -249,7 +249,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AnchorStage: {fileID: 1643182222}
-  DuplicateStage: 0
+  DuplicateStage: 1
   OnContentPlaced:
     m_PersistentCalls:
       m_Calls: []
@@ -266,7 +266,7 @@ MonoBehaviour:
   m_Script: {fileID: 422107450, guid: 1e108ae5f2133934f948edded555f03e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlaneIndicator: {fileID: 1353731089078378, guid: b9ed12c68682d5b49bfa70ee9d71602d,
+  PlaneIndicator: {fileID: 1353731089078378, guid: 46e67b02cdb5f204c8c251494447c62c,
     type: 3}
   Height: 1.4
   OnInteractiveHitTest:
@@ -456,6 +456,7 @@ GameObject:
   - component: {fileID: 1643182222}
   - component: {fileID: 1643182221}
   - component: {fileID: 1643182224}
+  - component: {fileID: 1643182225}
   m_Layer: 0
   m_Name: Ground Plane Stage
   m_TagString: Untagged
@@ -527,7 +528,7 @@ MonoBehaviour:
   mSelectedStageType: 0
   mPlaneReference: {fileID: 0}
   mMidAirReference: {fileID: 0}
-  mPreview: {fileID: 1643182224}
+  mPreview: {fileID: 1643182225}
 --- !u!4 &1643182223
 Transform:
   m_ObjectHideFlags: 0
@@ -544,6 +545,18 @@ Transform:
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1643182224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1643182220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 254cea3749b7c164aa587b7bf6cf7601, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1643182225
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

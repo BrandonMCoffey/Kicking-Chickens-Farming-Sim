@@ -1,0 +1,6 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" ml="UnityEditor.XR.MagicLeap" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:GroupBox style="margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 0; padding-top: 0; padding-bottom: 0; width: 373px; height: 673px; justify-content: space-between; opacity: 1; background-color: rgba(0, 0, 0, 0);">
+        <ui:VisualElement name="EggCount" style="height: 43px; width: 191px; top: 2%; left: 2%; background-color: rgb(241, 233, 221); align-items: flex-start; transform-origin: left top;" />
+        <ui:VisualElement name="ShopOpen" style="height: 70px; width: 70px; background-color: rgb(241, 233, 221); bottom: 3%; left: 3%; top: auto; align-items: flex-start; justify-content: flex-end; transform-origin: left bottom;" />
+    </ui:GroupBox>
+</ui:UXML>

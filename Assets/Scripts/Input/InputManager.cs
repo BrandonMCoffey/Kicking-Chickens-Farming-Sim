@@ -18,9 +18,18 @@ public class InputManager : MonoBehaviour
 	public static Vector2 LookDir { get; private set; }
 	public static bool HoldingScreen;
 	public static System.Action TapScreen = delegate { };
+	public static Vector2 ScreenPos { get; private set; }
+	
+	private bool TapThisFrame;
 	
 	private void Update()
 	{
+		if (TapThisFrame)
+		{
+			Log("Tap");
+			TapScreen?.Invoke();
+		}
+		TapThisFrame = false;
 		if (_tapping)
 		{
 			_tapDuration += Time.deltaTime;
@@ -46,6 +55,12 @@ public class InputManager : MonoBehaviour
 		Log("Look: " + LookDir, true);
 	}
 	
+	private void OnUpdateScreenPos(InputValue value)
+	{
+		ScreenPos = value.Get<Vector2>();
+		Log("Touch: " + ScreenPos, true);
+	}
+	
 	private void OnFire(InputValue value)
 	{
 		if (value.isPressed)
@@ -57,8 +72,7 @@ public class InputManager : MonoBehaviour
 		{
 			if (_tapDuration <= _maxHoldForTap)
 			{
-				Log("Tap");
-				TapScreen?.Invoke();
+				TapThisFrame = true;
 			}
 			else Log("End Hold");
 			_tapping = false;

@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,7 +11,9 @@ public class ARManagerSwitcher : MonoBehaviour
     [Header("References")]
     [SerializeField] private GameObject _arFoundation;
     [SerializeField] private GameObject _arVuforia;
-    [SerializeField] private GameObject _desktop;
+	[SerializeField] private GameObject _desktop;
+	
+	public static Action OnArInitialized = delegate { };
 
     private void Awake()
     {
@@ -43,7 +45,8 @@ public class ARManagerSwitcher : MonoBehaviour
         {
             Debug.Log("Starting XR...");
             XRGeneralSettings.Instance.Manager.StartSubsystems();
-            yield return null;
+	        yield return null;
+	        OnArInitialized?.Invoke();
         }
     }
 
@@ -57,5 +60,6 @@ public class ARManagerSwitcher : MonoBehaviour
         {
             _desktop.gameObject.SetActive(true);
         }
+	    OnArInitialized?.Invoke();
     }
 }

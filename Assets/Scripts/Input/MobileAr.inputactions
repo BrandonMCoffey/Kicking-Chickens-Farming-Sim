@@ -40,6 +40,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "UpdateScreenPos",
+                    "type": "Value",
+                    "id": "7dcb1782-0c55-41ec-b356-3cebb4fe9f75",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -273,6 +282,28 @@
                     "action": "MoveUpDown",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "8f0a3ccc-60be-4413-8b6e-0a299fc5354e",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "UpdateScreenPos",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c47b3ac3-35f9-46b5-8a49-5aa98e9bfe1f",
+                    "path": "<Touchscreen>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Touch",
+                    "action": "UpdateScreenPos",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },

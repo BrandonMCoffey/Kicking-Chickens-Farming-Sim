@@ -13,6 +13,8 @@ public class InputManager : MonoBehaviour
 	private float _tapDuration;
 	
 	public static Vector2 MoveDir { get; private set; }
+	public static float UpDown { get; private set; }
+	public static Vector3 Movement => new Vector3(MoveDir.x, UpDown, MoveDir.y);
 	public static Vector2 LookDir { get; private set; }
 	public static bool HoldingScreen;
 	public static System.Action TapScreen = delegate { };
@@ -30,6 +32,12 @@ public class InputManager : MonoBehaviour
 	{
 		MoveDir = value.Get<Vector2>();
 		Log("Move: " + MoveDir, true);
+	}
+	
+	private void OnMoveUpDown(InputValue value)
+	{
+		UpDown = value.Get<float>();
+		Log("UpDown: " + UpDown, true);
 	}
 	
 	private void OnLook(InputValue value)

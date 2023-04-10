@@ -5,6 +5,7 @@ using UnityEngine;
 public class DesktopArCameraMovement : MonoBehaviour
 {
 	[SerializeField] private float _moveSpeed = 2;
+	[SerializeField] private Vector2 _upDownClamp = new Vector2(1, 6);
 	[SerializeField] private float _lookSpeed = 20;
 	[SerializeField] private Vector2 _pitchClamp = new Vector2(-15, 60);
 	[SerializeField] private Transform _cameraTransform;
@@ -29,7 +30,9 @@ public class DesktopArCameraMovement : MonoBehaviour
 			
 		}
 		// Move
-		var move = InputManager.MoveDir * _moveSpeed * Time.deltaTime;
-		transform.position += move.y * transform.forward + move.x * transform.right;
+		var m = InputManager.Movement * _moveSpeed * Time.deltaTime;
+		var goal = transform.position + m.x * transform.right + m.y * Vector3.up + m.z * transform.forward;
+		goal.y = Mathf.Clamp(goal.y, _upDownClamp.x, _upDownClamp.y);
+		transform.position = goal;
 	}
 }

@@ -48,7 +48,10 @@ public class InteractionController : MonoBehaviour
 		Ray ray = _activeCamera.ScreenPointToRay(InputManager.ScreenPos);
 		if (Physics.Raycast(ray, out var hit, _maxInteractDistance, _interactLayerMask))
 		{
+			#if UNITY_EDITOR
 			Debug.Log("Tapped " + hit.collider.gameObject.name, gameObject);
+			Debug.DrawRay(ray.origin, ray.direction.normalized * hit.distance, Color.red, 8f);
+			#endif
 		}
 	}
 }

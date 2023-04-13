@@ -1,0 +1,11 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" ml="UnityEditor.XR.MagicLeap" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Button text="&lt;" display-tooltip-when-elided="true" name="btn_back" style="width: 40px; height: 40px; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; font-size: 35px; left: 3%; top: 3%; transform-origin: left top; overflow: visible;" />
+    <ui:GroupBox style="left: 0; top: 0; position: absolute; justify-content: space-around; align-items: center; height: 100%; width: 100%; transform-origin: center; right: 0; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; bottom: 0;">
+        <ui:GroupBox style="justify-content: space-around; align-items: center; width: 90%; height: 75%; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;">
+            <ui:Button text="Button" display-tooltip-when-elided="true" style="width: 100%; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; height: 30%;" />
+            <ui:Button text="Button" display-tooltip-when-elided="true" style="width: 100%; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; height: 30%;" />
+            <ui:Button text="Button" display-tooltip-when-elided="true" style="width: 100%; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; height: 30%;" />
+        </ui:GroupBox>
+    </ui:GroupBox>
+    <ui:VisualElement style="align-items: flex-start; width: 200px; height: 40px; transform-origin: left bottom; left: 3%; bottom: 3%; position: absolute; background-color: rgb(70, 70, 70);" />
+</ui:UXML>

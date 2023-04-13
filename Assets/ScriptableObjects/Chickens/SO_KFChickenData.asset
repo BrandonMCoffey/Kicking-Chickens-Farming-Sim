@@ -13,9 +13,12 @@ MonoBehaviour:
   m_Name: SO_KFChickenData
   m_EditorClassIdentifier: 
   chickenName: KFChicken
-  eggsPerLay: 5
-  eggsLayPerTick: 0.75
   chickenMaterial: {fileID: 0}
+  _egg: {fileID: 3511945319812538228, guid: 0488295644f908f4bb53f21e422a96b4, type: 3}
+  _eggHatchTime: 2
+  _eggLayTime: 6
+  _eggsPerLayMinMax: {x: 0, y: 0}
+  _chickenMatureTimeMinMax: {x: 4, y: 6}
   _moveSpeed: 0.8
   _rotateSpeed: 20
   _goalRange: 3

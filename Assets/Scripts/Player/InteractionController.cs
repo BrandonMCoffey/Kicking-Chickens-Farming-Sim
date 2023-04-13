@@ -52,6 +52,8 @@ public class InteractionController : MonoBehaviour
 			Debug.Log("Tapped " + hit.collider.gameObject.name, gameObject);
 			Debug.DrawRay(ray.origin, ray.direction.normalized * hit.distance, Color.red, 8f);
 			#endif
+			var interactable = hit.collider.GetComponent<IInteractable>();
+			if (interactable != null) interactable.Interact();
 		}
 	}
 }

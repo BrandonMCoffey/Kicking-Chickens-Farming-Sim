@@ -143,7 +143,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _data: {fileID: 11400000, guid: 98068829adcfac14eb50109c917da6dd, type: 2}
+  _chickenArt: {fileID: 8202442346872162785}
+  _eggArt: {fileID: 0}
+  _egg: 0
+  _eggHatchTime: 0
+  _mature: 0
+  _chickenMatureTime: 0
+  _layEggTimer: 0
+  _layEggTime: 0
   _center: {x: 0, y: 0, z: 0}
   _goal: {x: 0, y: 0, z: 0}
   _hasNotReachedGoal: 0
   _waitTimer: 0
+  _waitTime: 0

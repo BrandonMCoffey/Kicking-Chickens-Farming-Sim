@@ -16,3 +16,9 @@ MonoBehaviour:
   eggsPerLay: 5
   eggsLayPerTick: 0.75
   chickenMaterial: {fileID: 0}
+  _moveSpeed: 0.8
+  _rotateSpeed: 20
+  _goalRange: 3
+  _chickenMoveRange: 1
+  _goalReachedRange: 0.5
+  _waitTimeMinMax: {x: 2, y: 4}

@@ -142,3 +142,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4693c06db930396449f0c5902ee403cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _data: {fileID: 11400000, guid: 98068829adcfac14eb50109c917da6dd, type: 2}
+  _center: {x: 0, y: 0, z: 0}
+  _goal: {x: 0, y: 0, z: 0}
+  _hasNotReachedGoal: 0
+  _waitTimer: 0

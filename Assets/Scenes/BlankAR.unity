@@ -862,6 +862,8 @@ MonoBehaviour:
   _hasNotReachedGoal: 0
   _waitTimer: 0
   _waitTime: 0
+  _chickenSound: {fileID: 8300000, guid: 74134e0ebfd262e48819f60e3aa50f41, type: 3}
+  _chickenLayEggSound: {fileID: 8300000, guid: f1ea40d239f77be459e7e5933c0537fb, type: 3}
 --- !u!4 &790263035
 Transform:
   m_ObjectHideFlags: 0

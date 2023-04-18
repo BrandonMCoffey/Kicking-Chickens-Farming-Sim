@@ -8,11 +8,11 @@ namespace Economy
         private int _eggsAmount;
         
         private DateTime _previousTime;
-        
-        
+
         public void AddEggs(int amount)
         {
             _eggsAmount += amount;
+            Debug.Log(_eggsAmount);
         }
         
         public void RemoveEggs(int amount)

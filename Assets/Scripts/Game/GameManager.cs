@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
 	{
 		var chicken = Instantiate(prefab, _groundPlane);
 		
-		// TODO: Actual definied positions based on player tap location
+		// TODO: Actual defined positions based on player tap location
 		var offset = Random.insideUnitCircle * 2;
 		chicken.transform.localPosition += new Vector3(offset.x, 0, offset.y);
 		

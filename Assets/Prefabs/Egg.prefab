@@ -59,6 +59,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51fecbbb478e50c4987acbd4afebc193, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _eggLayEffect: {fileID: 4254536374624849041, guid: 105fa7bdf10b4e743be70fd8a70bcbae,
+    type: 3}
+  _eggLaySound:
+    UseClip: 0
+    Clip: {fileID: 0}
+    Base: {fileID: 11400000, guid: 22542b7813cbffa4ca79d100e5c31c8d, type: 2}
 --- !u!1 &8838356781555272960
 GameObject:
   m_ObjectHideFlags: 0

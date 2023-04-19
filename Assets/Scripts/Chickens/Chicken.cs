@@ -17,8 +17,8 @@ public class Chicken : MonoBehaviour
 	[SerializeField, ReadOnly] private float _waitTime;
 
 	[Header("SFX")]
-	[SerializeField] private AudioClip _chickenSound;
-	[SerializeField] private AudioClip _chickenLayEggSound;
+	[SerializeField] private SfxReference _chickenSound;
+	[SerializeField] private SfxReference _chickenLayEggSound;
 	
 	private void Start()
 	{
@@ -81,13 +81,13 @@ public class Chicken : MonoBehaviour
 			
 			// TODO: Spawn Egg
 			var egg = Instantiate(_data.EggPrefab, transform.position, Quaternion.identity);
+			_chickenSound.Play();
 			egg.Hatch(_data.EggHatchTime);
-			AudioManager.PlayerClip2D(_chickenLayEggSound, 0.1f);
 		}
 	}
 
 	private void PlayChickenSound()
 	{
-		AudioManager.PlayerClip2D(_chickenSound, 0.1f);
+		_chickenLayEggSound.Play();
 	}
 }

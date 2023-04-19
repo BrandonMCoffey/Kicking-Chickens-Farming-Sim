@@ -6,6 +6,13 @@ using UnityEngine;
 
 public class Egg : MonoBehaviour, IInteractable
 {
+
+	[Header("VFX")]
+	[SerializeField] private GameObject _eggLayEffect;
+
+	[Header("SFX")]
+	[SerializeField] private SfxReference _eggLaySound;
+
 	public void Hatch(float time)
 	{
 		StartCoroutine(HatchRoutine(time));
@@ -25,6 +32,8 @@ public class Egg : MonoBehaviour, IInteractable
 	public void Interact()
 	{
 		EconomyManager.Instance.AddEggs(1);
+		Instantiate(_eggLayEffect, transform.position, Quaternion.identity);
+		_eggLaySound.Play();
 		Destroy(gameObject);
 	}
 }

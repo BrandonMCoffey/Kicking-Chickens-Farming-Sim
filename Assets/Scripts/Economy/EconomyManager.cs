@@ -1,6 +1,7 @@
 using UnityEngine;
 using System;
 using TMPro;
+using UnityEngine.Serialization;
 
 namespace Economy
 {
@@ -12,7 +13,9 @@ namespace Economy
         
         private DateTime _previousTime;
         
-        [SerializeField] private TextMeshProUGUI eggsText;
+        [SerializeField] private TextMeshProUGUI eggsAmountMain;
+        [SerializeField] private TextMeshProUGUI eggsAmountPurchaseScreen;
+        [SerializeField] private TextMeshProUGUI eggsAmountUpgradeScreen;
         
         private void Awake()
         {
@@ -29,7 +32,9 @@ namespace Economy
         public void AddEggs(int amount)
         {
             _eggsAmount += amount;
-            eggsText.text = _eggsAmount.ToString();
+            eggsAmountMain.text = _eggsAmount.ToString();
+            eggsAmountPurchaseScreen.text = _eggsAmount.ToString();
+            eggsAmountUpgradeScreen.text = _eggsAmount.ToString();
         }
         
         public void RemoveEggs(int amount)
@@ -37,12 +42,16 @@ namespace Economy
             if (_eggsAmount <= 0)
             {
                 _eggsAmount = 0;
-                eggsText.text = _eggsAmount.ToString();
+                eggsAmountMain.text = _eggsAmount.ToString();
+                eggsAmountPurchaseScreen.text = _eggsAmount.ToString();
+                eggsAmountUpgradeScreen.text = _eggsAmount.ToString();
                 return;
             }
             
             _eggsAmount -= amount;
-            eggsText.text = _eggsAmount.ToString();
+            eggsAmountMain.text = _eggsAmount.ToString();
+            eggsAmountPurchaseScreen.text = _eggsAmount.ToString();
+            eggsAmountUpgradeScreen.text = _eggsAmount.ToString();
         }
         
         public bool CanAfford(int amount)

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Economy;
 using UnityEngine;
 
 public class Egg : MonoBehaviour, IInteractable
@@ -23,6 +24,7 @@ public class Egg : MonoBehaviour, IInteractable
 	
 	public void Interact()
 	{
+		EconomyManager.Instance.AddEggs(1);
 		Destroy(gameObject);
 	}
 }

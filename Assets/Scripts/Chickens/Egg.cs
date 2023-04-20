@@ -6,7 +6,10 @@ using UnityEngine;
 
 public class Egg : MonoBehaviour, IInteractable
 {
-
+	[SerializeField] private float _lifeSpan = 10;
+	[SerializeField, ReadOnly] private float _lifeTime;
+	[SerializeField, ReadOnly] private bool _hatched;
+	
 	[Header("VFX")]
 	[SerializeField] private GameObject _eggLayEffect;
 
@@ -20,6 +23,7 @@ public class Egg : MonoBehaviour, IInteractable
 	
 	private IEnumerator HatchRoutine(float time)
 	{
+		_hatched = false;
 		float mult = 1f / time;
 		for (float delta = 0; delta < 1; delta += time * Time.deltaTime)
 		{
@@ -27,6 +31,7 @@ public class Egg : MonoBehaviour, IInteractable
 			yield return null;
 		}
 		transform.localScale = Vector3.one;
+		_hatched = true;
 	}
 	
 	public void Interact()
@@ -35,5 +40,16 @@ public class Egg : MonoBehaviour, IInteractable
 		Instantiate(_eggLayEffect, transform.position, Quaternion.identity);
 		_eggLaySound.Play();
 		Destroy(gameObject);
+	}
+	
+	private void Update()
+	{
+		if (!_hatched) return;
+		_lifeTime += Time.deltaTime;
+		if (_lifeTime > _lifeSpan)
+		{
+			EconomyManager.Instance.AddEggs(1);
+			Destroy(gameObject);
+		}
 	}
 }

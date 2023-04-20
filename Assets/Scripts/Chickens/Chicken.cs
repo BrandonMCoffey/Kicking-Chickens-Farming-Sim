@@ -18,8 +18,8 @@ public class Chicken : MonoBehaviour
 	[SerializeField, ReadOnly] private float _waitTime;
 
 	[Header("SFX")]
-	[SerializeField] public AudioClip _chickenNoise;
-	[SerializeField] public AudioClip _eggLayNoise;
+	[SerializeField] private AudioClip _chickenNoise;
+	[SerializeField] private AudioClip _eggLayNoise;
 
 	private void Start()
 	{

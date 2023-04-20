@@ -1,17 +1,16 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using Economy;
+using Audio;
 using UnityEngine;
 
 public class Egg : MonoBehaviour, IInteractable
 {
 
 	[Header("VFX")]
-	[SerializeField] private GameObject _eggLayEffect;
+	[SerializeField] private GameObject _eggCollectEffect;
 
 	[Header("SFX")]
-	[SerializeField] private SfxReference _eggLaySound;
+	[SerializeField] private AudioClip _eggLaySound;
 
 	public void Hatch(float time)
 	{
@@ -32,8 +31,8 @@ public class Egg : MonoBehaviour, IInteractable
 	public void Interact()
 	{
 		EconomyManager.Instance.AddEggs(1);
-		Instantiate(_eggLayEffect, transform.position, Quaternion.identity);
-		_eggLaySound.Play();
+		Instantiate(_eggCollectEffect, transform.position, Quaternion.identity);
+		AudioManager.PlayClip3D(_eggLaySound, 0.1f);
 		Destroy(gameObject);
 	}
 }

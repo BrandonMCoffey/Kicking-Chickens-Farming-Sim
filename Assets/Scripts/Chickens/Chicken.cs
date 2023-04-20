@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Audio;
 
-public class Chicken : MonoBehaviour
+public class Chicken : MonoBehaviour, IInteractable
 {
 	[SerializeField] private SO_ChickenDataBase _data;
 	[SerializeField] private Transform _chickenArt;
@@ -110,5 +110,11 @@ public class Chicken : MonoBehaviour
 	private void PlayChickenSound()
 	{
 		AudioManager.PlayClip3D(_chickenNoise, 0.1f);
+	}
+	
+	[Button]
+	public void Interact()
+	{
+		GameManager.EmitHearts(transform.position, transform.eulerAngles);
 	}
 }

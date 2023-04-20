@@ -7,6 +7,9 @@ public class GameManager : MonoBehaviour
 	public static GameManager Instance;
 	private static List<ValidGroundPlane> _planes = new List<ValidGroundPlane>();
     
+	[SerializeField] private ParticleSystem _heartParticles;
+	[SerializeField] private int _heartsPerClick = 1;
+	[SerializeField] private Transform _chickenParent;
 	[SerializeField] private List<Chicken> _chickenPrefabs;
 	
 	[Header("Debug")]
@@ -26,9 +29,15 @@ public class GameManager : MonoBehaviour
 		SpawnChicken(chicken);
 	}
 	
+	[Button]
+	public void Spawn100RandomChickens()
+	{
+		for (int i = 0; i < 100; i++) SpawnRandomChicken();
+	}
+	
 	public void SpawnChicken(Chicken prefab)
 	{
-		var chicken = Instantiate(prefab);
+		var chicken = Instantiate(prefab, _chickenParent);
 		
 		// TODO: Actual defined positions based on player tap location
 		var offset = Random.insideUnitCircle * 2;
@@ -50,5 +59,11 @@ public class GameManager : MonoBehaviour
 	public static void RemovePlane(ValidGroundPlane plane)
 	{
 		_planes.Remove(plane);
+	}
+	
+	public static void EmitHearts(Vector3 pos, Vector3 rot)
+	{
+		Instance._heartParticles.transform.SetPositionAndRotation(pos, Quaternion.Euler(rot));
+		Instance._heartParticles.Emit(Instance._heartsPerClick);
 	}
 }

@@ -59,7 +59,7 @@ namespace Economy
             return _eggsAmount >= amount;
         }
         
-        public void BuyFeed(int amount)
+        public void BuyItem(int amount)
         {
             if (CanAfford(amount))
             {

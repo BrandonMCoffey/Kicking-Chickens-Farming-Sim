@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Audio;
 
 public class Chicken : MonoBehaviour
 {
@@ -17,9 +18,9 @@ public class Chicken : MonoBehaviour
 	[SerializeField, ReadOnly] private float _waitTime;
 
 	[Header("SFX")]
-	[SerializeField] private SfxReference _chickenSound;
-	[SerializeField] private SfxReference _chickenLayEggSound;
-	
+	[SerializeField] public AudioClip _chickenNoise;
+	[SerializeField] public AudioClip _eggLayNoise;
+
 	private void Start()
 	{
 		_center = transform.localPosition;
@@ -27,7 +28,7 @@ public class Chicken : MonoBehaviour
 		_layEggTime = _data.eggLayTime;
 		_waitTime = _data.WaitTime;
 		
-		InvokeRepeating(nameof(PlayChickenSound), 2.0f, Random.Range(5.0f, 9.0f));
+		InvokeRepeating(nameof(PlayChickenSound), 2.0f, Random.Range(15.0f, 25.0f));
 	}
 	
 	private void Update()
@@ -79,15 +80,14 @@ public class Chicken : MonoBehaviour
 			_layEggTimer = 0;
 			_layEggTime = _data.eggLayTime;
 			
-			// TODO: Spawn Egg
 			var egg = Instantiate(_data.EggPrefab, transform.position, Quaternion.identity);
-			_chickenSound.Play();
+			AudioManager.PlayClip3D(_eggLayNoise, 0.1f);
 			egg.Hatch(_data.EggHatchTime);
 		}
 	}
-
+	
 	private void PlayChickenSound()
 	{
-		_chickenLayEggSound.Play();
+		AudioManager.PlayClip3D(_chickenNoise, 0.1f);
 	}
 }

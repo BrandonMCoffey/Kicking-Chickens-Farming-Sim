@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8202442346872162785}
   - component: {fileID: 7580307056294290908}
   - component: {fileID: 632682950740885730}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Art
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 8904511605660497342}
   - component: {fileID: 8131529004651704069}
   - component: {fileID: 2392980466499979046}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Chicken
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -151,11 +151,5 @@ MonoBehaviour:
   _hasNotReachedGoal: 0
   _waitTimer: 0
   _waitTime: 0
-  _chickenSound:
-    UseClip: 0
-    Clip: {fileID: 0}
-    Base: {fileID: 11400000, guid: 6e88cbb2778c5214abcaa495eb503ddb, type: 2}
-  _chickenLayEggSound:
-    UseClip: 0
-    Clip: {fileID: 0}
-    Base: {fileID: 0}
+  _chickenNoise: {fileID: 8300000, guid: 74134e0ebfd262e48819f60e3aa50f41, type: 3}
+  _eggLayNoise: {fileID: 8300000, guid: f1ea40d239f77be459e7e5933c0537fb, type: 3}

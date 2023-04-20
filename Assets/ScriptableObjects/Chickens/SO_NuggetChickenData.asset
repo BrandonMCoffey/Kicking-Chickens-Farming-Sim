@@ -13,6 +13,15 @@ MonoBehaviour:
   m_Name: SO_NuggetChickenData
   m_EditorClassIdentifier: 
   chickenName: Nugget
-  eggsPerLay: 1
-  eggsLayPerTick: 0.25
   chickenMaterial: {fileID: 0}
+  _egg: {fileID: 0}
+  _eggHatchTime: 2
+  _eggLayTime: 10
+  _eggsPerLayMinMax: {x: 0, y: 0}
+  _chickenMatureTimeMinMax: {x: 4, y: 6}
+  _moveSpeed: 5
+  _rotateSpeed: 20
+  _goalRange: 3
+  _chickenMoveRange: 1
+  _goalReachedRange: 0.5
+  _waitTimeMinMax: {x: 2, y: 4}

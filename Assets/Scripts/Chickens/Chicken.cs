@@ -9,6 +9,7 @@ public class Chicken : MonoBehaviour
 	[SerializeField] private Transform _chickenArt;
 	
 	[Header("Debug")]
+	[SerializeField, ReadOnly] private ValidGroundPlane _groundPlane;
 	[SerializeField, ReadOnly] private float _layEggTimer;
 	[SerializeField, ReadOnly] private float _layEggTime;
 	[SerializeField, ReadOnly] private Vector3 _center;
@@ -33,8 +34,28 @@ public class Chicken : MonoBehaviour
 	
 	private void Update()
 	{
+		CheckGroundPlane();
+		if (!_groundPlane) return;
 		ChickenUpdate();
 		LayEggUpdate();
+	}
+	
+	private void CheckGroundPlane()
+	{
+		if (_groundPlane) return;
+		SetGroundPlane(GameManager.GetRandomGrondPlane());
+	}
+	
+	public void SetGroundPlane(ValidGroundPlane plane)
+	{
+		_chickenArt.gameObject.SetActive(plane);
+		_groundPlane = plane;
+		if (plane)
+		{
+			transform.position = plane.GetPointOnPlane();
+			_goal = plane.GetPointOnPlane();
+			transform.LookAt(_goal, plane.GetNormal());
+		}
 	}
 	
 	private void ChickenUpdate()
@@ -55,7 +76,7 @@ public class Chicken : MonoBehaviour
 			_waitTimer += Time.deltaTime;
 			if (_waitTimer > _waitTime)
 			{
-				_goal = _data.RandomGoalOffset(_center, transform.localPosition);
+				_goal = _groundPlane.GetPointOnPlane();
 				_hasNotReachedGoal = true;
 			}
 		}
@@ -64,11 +85,11 @@ public class Chicken : MonoBehaviour
 	private void MoveAndRotateChicken()
 	{
 		var currRot = transform.localRotation;
-		transform.LookAt(_goal, GameManager.GroundPlane.up);
+		transform.LookAt(_goal, _groundPlane.GetNormal());
 		transform.localRotation = Quaternion.Lerp(currRot, transform.localRotation, _data.RotateSpeed * Time.deltaTime);
 		
 		// TODO: This can be better (Local only)
-		var move = Vector3.ProjectOnPlane(transform.forward, GameManager.GroundPlane.up);
+		var move = Vector3.ProjectOnPlane(transform.forward, _groundPlane.GetNormal());
 		transform.position += move * _data.MoveSpeed * Time.deltaTime;
 	}
 	

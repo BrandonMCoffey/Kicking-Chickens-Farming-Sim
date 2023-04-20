@@ -8,7 +8,7 @@ public class InteractionController : MonoBehaviour
 	[SerializeField] private LayerMask _interactLayerMask = 1;
 	
 	[Header("Camera References")]
-	[SerializeField] private List<Camera> _cameras;
+	[SerializeField] private List<Camera> _cameras = new List<Camera>();
 	[SerializeField, ReadOnly] private Camera _activeCamera;
 	
 	private bool _active;

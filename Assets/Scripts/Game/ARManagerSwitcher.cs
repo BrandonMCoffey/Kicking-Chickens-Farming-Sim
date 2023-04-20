@@ -6,11 +6,8 @@ using UnityEngine.XR.Management;
 
 public class ARManagerSwitcher : MonoBehaviour
 {
-    [SerializeField] private bool _vuforiaWebcamTesting;
-    
     [Header("References")]
     [SerializeField] private GameObject _arFoundation;
-    [SerializeField] private GameObject _arVuforia;
 	[SerializeField] private GameObject _desktop;
 	
 	public static Action OnArInitialized = delegate { };
@@ -18,7 +15,6 @@ public class ARManagerSwitcher : MonoBehaviour
     private void Awake()
     {
         _arFoundation.gameObject.SetActive(false);
-        _arVuforia.gameObject.SetActive(false);
         _desktop.gameObject.SetActive(false);
     }
 
@@ -51,15 +47,8 @@ public class ARManagerSwitcher : MonoBehaviour
     }
 
     private void StartDesktopAr()
-    {
-        if (_vuforiaWebcamTesting)
-        {
-            _arVuforia.gameObject.SetActive(true);
-        }
-        else
-        {
-            _desktop.gameObject.SetActive(true);
-        }
+	{
+		_desktop.gameObject.SetActive(true);
 	    OnArInitialized?.Invoke();
     }
 }

@@ -64,7 +64,7 @@ public class Chicken : MonoBehaviour
 	private void MoveAndRotateChicken()
 	{
 		var currRot = transform.localRotation;
-		transform.LookAt(_goal, Vector3.up);
+		transform.LookAt(_goal, GameManager.GroundPlane.up);
 		transform.localRotation = Quaternion.Lerp(currRot, transform.localRotation, _data.RotateSpeed * Time.deltaTime);
 		
 		// TODO: This can be better (Local only)

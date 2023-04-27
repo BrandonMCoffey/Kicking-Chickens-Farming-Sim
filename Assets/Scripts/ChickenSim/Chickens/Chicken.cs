@@ -29,7 +29,7 @@ public class Chicken : MonoBehaviour, IInteractable
 		_layEggTime = _data.eggLayTime;
 		_waitTime = _data.WaitTime;
 		
-		InvokeRepeating(nameof(PlayChickenSound), 2.0f, Random.Range(15.0f, 25.0f));
+		InvokeRepeating(nameof(PlayChickenSound), 5.0f, Random.Range(15.0f, 50.0f));
 	}
 	
 	private void Update()

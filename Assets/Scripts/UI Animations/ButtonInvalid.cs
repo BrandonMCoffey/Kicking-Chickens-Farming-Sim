@@ -21,7 +21,7 @@ public class ButtonInvalid : MonoBehaviour
     {
         if (!eco.CanAfford(cost))
             ShakeButton();
-        else if (eco.CanAfford(cost))
+        else
             PurchaseAnim();
     }
 

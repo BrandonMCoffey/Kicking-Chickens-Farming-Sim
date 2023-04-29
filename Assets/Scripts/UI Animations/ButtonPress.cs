@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class ButtonPress : MonoBehaviour
 {
-    [SerializeField] private GameObject panel;
+    [SerializeField] private GameObject panelToActivate;
+    [SerializeField] private GameObject panelToDeactivate;
     [SerializeField] private float scale;
     [SerializeField] private float duration;
 
@@ -26,10 +27,12 @@ public class ButtonPress : MonoBehaviour
         
         yield return new WaitForSeconds(duration);
         
-        if(panel != null)
-            panel.SetActive(!panel.activeSelf);
+        if(panelToActivate != null)
+            panelToActivate.SetActive(true);
+        if (panelToDeactivate != null)
+            panelToDeactivate.SetActive(false);
 
-        
+
     }
 
 }

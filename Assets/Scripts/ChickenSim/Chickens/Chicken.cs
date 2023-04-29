@@ -89,6 +89,8 @@ public class Chicken : MonoBehaviour, IInteractable
 		transform.localRotation = Quaternion.Lerp(currRot, transform.localRotation, _data.RotateSpeed * Time.deltaTime);
 		
 		// TODO: This can be better (Local only)
+		// TODO: This can be better (Local only)
+		// TODO: This can be better (Local only)
 		var move = Vector3.ProjectOnPlane(transform.forward, _groundPlane.GetNormal());
 		transform.position += move * _data.MoveSpeed * Time.deltaTime;
 	}
@@ -101,9 +103,8 @@ public class Chicken : MonoBehaviour, IInteractable
 			_layEggTimer = 0;
 			_layEggTime = _data.eggLayTime;
 			
-			var egg = Instantiate(_data.EggPrefab, transform.position, Quaternion.identity);
+			GameManager.Instance.SpawnEgg(_data.EggPrefab, transform);
 			AudioManager.PlayClip3D(_eggLayNoise, 0.1f);
-			egg.Hatch(_data.EggHatchTime);
 		}
 	}
 	

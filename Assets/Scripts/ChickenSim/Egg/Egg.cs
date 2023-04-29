@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Egg : MonoBehaviour, IInteractable
 {
-	[SerializeField] private float _lifeSpan = 10;
+	[SerializeField] private SO_EggData _data;
 	[SerializeField, ReadOnly] private float _lifeTime;
 	[SerializeField, ReadOnly] private bool _hatched;
 	
@@ -15,9 +15,9 @@ public class Egg : MonoBehaviour, IInteractable
 	[Header("SFX")]
 	[SerializeField] private AudioClip _eggLaySound;
 
-	public void Hatch(float time)
+	public void Hatch()
 	{
-		StartCoroutine(HatchRoutine(time));
+		StartCoroutine(HatchRoutine(_data.HatchTime));
 	}
 	
 	private IEnumerator HatchRoutine(float time)
@@ -45,9 +45,9 @@ public class Egg : MonoBehaviour, IInteractable
 	{
 		if (!_hatched) return;
 		_lifeTime += Time.deltaTime;
-		if (_lifeTime > _lifeSpan)
+		if (_lifeTime > _data.LifeSpan)
 		{
-			EconomyManager.Instance.AddEggs(1);
+			EconomyManager.Instance.AddEggs(_data.EggValue);
 			Destroy(gameObject);
 		}
 	}

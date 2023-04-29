@@ -45,15 +45,17 @@ public class InteractionController : MonoBehaviour
 	private void Interact()
 	{
 		if (!_active) return;
-		Ray ray = _activeCamera.ScreenPointToRay(InputManager.ScreenPos);
-		if (Physics.Raycast(ray, out var hit, _maxInteractDistance, _interactLayerMask))
+		var ray = _activeCamera.ScreenPointToRay(InputManager.ScreenPos);
+		var hits = Physics.RaycastAll(ray ,_maxInteractDistance, _interactLayerMask);
+		foreach (var hit in hits)
 		{
+			var interactable = hit.collider.GetComponent<IInteractable>();
+			if (interactable != null) interactable.Interact();
+			
 			#if UNITY_EDITOR
 			Debug.Log("Tapped " + hit.collider.gameObject.name, gameObject);
 			Debug.DrawRay(ray.origin, ray.direction.normalized * hit.distance, Color.red, 8f);
 			#endif
-			var interactable = hit.collider.GetComponent<IInteractable>();
-			if (interactable != null) interactable.Interact();
 		}
 	}
 }

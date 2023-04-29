@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5608,7 +5608,7 @@ MonoBehaviour:
   _maxInteractDistance: 10
   _interactLayerMask:
     serializedVersion: 2
-    m_Bits: 51
+    m_Bits: 15393
   _cameras:
   - {fileID: 448203308533516934}
   - {fileID: 448203307243039486}
@@ -5622,6 +5622,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 994314776}
+  - component: {fileID: 994314777}
   m_Layer: 0
   m_Name: Eggs
   m_TagString: Untagged
@@ -5640,11 +5641,22 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1670042780}
+  m_Children: []
   m_Father: {fileID: 5580007342872483528}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &994314777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 994314775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e614b57b8212c0d45933a7766e10838c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1140179592 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2378148425349723044, guid: ab064a1da9f2956479d7e07ca314203e,
@@ -6099,81 +6111,6 @@ MonoBehaviour:
   _maxHoldForTap: 0.2
   _debug: 0
   _debugMovement: 0
---- !u!1001 &1670042779
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 994314776}
-    m_Modifications:
-    - target: {fileID: 823228046511851589, guid: 0488295644f908f4bb53f21e422a96b4,
-        type: 3}
-      propertyPath: m_Name
-      value: Egg
-      objectReference: {fileID: 0}
-    - target: {fileID: 3758847914421851193, guid: 0488295644f908f4bb53f21e422a96b4,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3758847914421851193, guid: 0488295644f908f4bb53f21e422a96b4,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3758847914421851193, guid: 0488295644f908f4bb53f21e422a96b4,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3758847914421851193, guid: 0488295644f908f4bb53f21e422a96b4,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3758847914421851193, guid: 0488295644f908f4bb53f21e422a96b4,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3758847914421851193, guid: 0488295644f908f4bb53f21e422a96b4,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3758847914421851193, guid: 0488295644f908f4bb53f21e422a96b4,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3758847914421851193, guid: 0488295644f908f4bb53f21e422a96b4,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3758847914421851193, guid: 0488295644f908f4bb53f21e422a96b4,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3758847914421851193, guid: 0488295644f908f4bb53f21e422a96b4,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3758847914421851193, guid: 0488295644f908f4bb53f21e422a96b4,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 0488295644f908f4bb53f21e422a96b4, type: 3}
---- !u!4 &1670042780 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3758847914421851193, guid: 0488295644f908f4bb53f21e422a96b4,
-    type: 3}
-  m_PrefabInstance: {fileID: 1670042779}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1706674894 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8904511605660497342, guid: 7d221f3888bf6d541b65002cc9408dac,
@@ -6827,6 +6764,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe3dcf9fa3bceae41aafb0f3b2b49c6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _eggController: {fileID: 994314777}
   _heartParticles: {fileID: 123766719}
   _heartsPerClick: 1
   _chickenParent: {fileID: 85400179}

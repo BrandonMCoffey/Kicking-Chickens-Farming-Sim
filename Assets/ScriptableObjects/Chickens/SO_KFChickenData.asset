@@ -13,15 +13,12 @@ MonoBehaviour:
   m_Name: SO_KFChickenData
   m_EditorClassIdentifier: 
   chickenName: KFChicken
-  chickenMaterial: {fileID: 0}
   _egg: {fileID: 3511945319812538228, guid: 0488295644f908f4bb53f21e422a96b4, type: 3}
   _eggHatchTime: 2
-  _eggLayTime: 6
+  _eggLayTimeMinMax: {x: 6, y: 12}
   _eggsPerLayMinMax: {x: 0, y: 0}
   _chickenMatureTimeMinMax: {x: 4, y: 6}
   _moveSpeed: 0.8
   _rotateSpeed: 20
-  _goalRange: 3
-  _chickenMoveRange: 1
   _goalReachedRange: 0.5
   _waitTimeMinMax: {x: 2, y: 4}

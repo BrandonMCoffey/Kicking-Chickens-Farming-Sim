@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 	public static GameManager Instance;
 	private static List<ValidGroundPlane> _planes = new List<ValidGroundPlane>();
     
+	[SerializeField] private EggPool _eggController;
 	[SerializeField] private ParticleSystem _heartParticles;
 	[SerializeField] private int _heartsPerClick = 1;
 	[SerializeField] private Transform _chickenParent;
@@ -44,6 +45,11 @@ public class GameManager : MonoBehaviour
 		chicken.transform.localPosition += new Vector3(offset.x, 0, offset.y);
 		
 		_spawnedChickens.Add(chicken);
+	}
+	
+	public void SpawnEgg(Egg eggPrefab, Transform parent)
+	{
+		_eggController.SpawnEgg(eggPrefab, parent);
 	}
 	
 	public static ValidGroundPlane GetRandomGrondPlane()

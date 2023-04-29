@@ -5,21 +5,17 @@ public class SO_ChickenDataBase : ScriptableObject
 {
 	public string chickenName;
     
-	[Tooltip("The material the chicken will use")]
-	public Material chickenMaterial;
-    
-    
 	[Header("Eggs")]
 	[SerializeField] private Egg _egg;
 	[SerializeField] private float _eggHatchTime = 2f;
     [Tooltip("The number of ticks between lay events")]
-	[SerializeField] private float _eggLayTime = 10f;
+    [SerializeField] private Vector2 _eggLayTimeMinMax = new Vector2(8, 12);
 	[Tooltip("The number of eggs per lay event")]
 	[SerializeField] private Vector2Int _eggsPerLayMinMax;
 	
 	public Egg EggPrefab => _egg;
 	public float EggHatchTime => _eggHatchTime;
-	public float eggLayTime => _eggLayTime;
+	public float eggLayTime => Random.Range(_eggLayTimeMinMax.x, _eggLayTimeMinMax.y);
 	public int EggsPerLay => Random.Range(_eggsPerLayMinMax.x, _eggsPerLayMinMax.y);
 	
 	

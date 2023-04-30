@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class InteractionController : MonoBehaviour
 {
+	[SerializeField] private bool _debug;
 	[SerializeField] private float _maxInteractDistance = 10;
 	[SerializeField] private LayerMask _interactLayerMask = 1;
 	
@@ -53,8 +54,11 @@ public class InteractionController : MonoBehaviour
 			if (interactable != null) interactable.Interact();
 			
 			#if UNITY_EDITOR
-			Debug.Log("Tapped " + hit.collider.gameObject.name, gameObject);
-			Debug.DrawRay(ray.origin, ray.direction.normalized * hit.distance, Color.red, 8f);
+			if (_debug)
+			{
+				Debug.Log("Tapped " + hit.collider.gameObject.name, gameObject);
+				Debug.DrawRay(ray.origin, ray.direction.normalized * hit.distance, Color.red, 8f);
+			}
 			#endif
 		}
 	}

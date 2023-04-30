@@ -46,12 +46,30 @@ public class Chicken : MonoBehaviour, IInteractable
 	public void SetGroundPlane(ValidGroundPlane plane)
 	{
 		_groundPlane = plane;
-		if (plane)
+		if (_groundPlane)
 		{
-			transform.position = plane.GetPointOnPlane();
-			_goal = plane.GetPointOnPlane();
-			transform.LookAt(_goal, plane.GetNormal());
+			transform.position = GetValidGoal();
+			_goal = GetValidGoal();
+			transform.LookAt(_goal, _groundPlane.GetNormal());
 		}
+	}
+	
+	private Vector3 GetValidGoal()
+	{
+		Vector3 pos = Vector3.zero;
+		for (int i = 0; i < 10; i++)
+		{
+			pos = _groundPlane.GetPointOnPlane();
+			var dir = (pos - transform.position).normalized;
+
+			if (Physics.Raycast(transform.position, dir, out var hit, 100, GameManager.CoopLayer))
+			{
+				continue;
+			}
+			return pos;
+		}
+		Debug.LogWarning("Could not find valid goal for chicken", gameObject);
+		return pos;
 	}
 	
 	private void ChickenUpdate()
@@ -72,7 +90,7 @@ public class Chicken : MonoBehaviour, IInteractable
 			_waitTimer += Time.deltaTime;
 			if (_waitTimer > _waitTime)
 			{
-				_goal = _groundPlane.GetPointOnPlane();
+				_goal = GetValidGoal();
 				_hasNotReachedGoal = true;
 			}
 		}
@@ -84,8 +102,6 @@ public class Chicken : MonoBehaviour, IInteractable
 		transform.LookAt(_goal, _groundPlane.GetNormal());
 		transform.localRotation = Quaternion.Lerp(currRot, transform.localRotation, _data.RotateSpeed * Time.deltaTime);
 		
-		// TODO: This can be better (Local only)
-		// TODO: This can be better (Local only)
 		// TODO: This can be better (Local only)
 		var move = Vector3.ProjectOnPlane(transform.forward, _groundPlane.GetNormal());
 		transform.position += move * (_data.MoveSpeed * Time.deltaTime);

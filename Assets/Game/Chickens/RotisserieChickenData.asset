@@ -15,7 +15,7 @@ MonoBehaviour:
   _chickenName: Rotisserie
   _chickenArt: {fileID: 8131529004651704068, guid: 26f0faefdf02de3478715c55d7cbb66b,
     type: 3}
-  _chickenCost: 1
+  _chickenCost: 100
   _chickenNoise:
     UseClip: 0
     Clip: {fileID: 0}
@@ -28,7 +28,7 @@ MonoBehaviour:
     Base: {fileID: 11400000, guid: 3d041f4ffc4f25542a5806d26a1a50ea, type: 2}
   _hatchTime: 1
   _lifeSpan: 10
-  _eggValue: 1
+  _eggValue: 10
   _moveSpeed: 1.2
   _rotateSpeed: 20
   _goalReachedRange: 0.5

@@ -1,4 +1,4 @@
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 
 public class FloatVariable_TextDisplay : MonoBehaviour
@@ -17,7 +17,8 @@ public class FloatVariable_TextDisplay : MonoBehaviour
 
     private void OnEnable()
     {
-        if (_float) _float.OnValueChanged += SetValue;
+	    if (_float) _float.OnValueChanged += SetValue;
+	    SetValue(_float.Value);
     }
 
     private void OnDisable()

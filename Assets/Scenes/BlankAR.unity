@@ -312,7 +312,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6775141b371d09c46bfba93e11718511, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spawnedChickens: []
+  _spawnedChickens:
+  - {fileID: 1286652435}
 --- !u!1 &123766716
 GameObject:
   m_ObjectHideFlags: 0
@@ -7943,6 +7944,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _economy: {fileID: 1851483877}
   _coopController: {fileID: 1756173841}
+  _coopLayer:
+    serializedVersion: 2
+    m_Bits: 8192
   _chickenController: {fileID: 85400180}
   _eggController: {fileID: 994314777}
   _petChickenParticles: {fileID: 123766719}

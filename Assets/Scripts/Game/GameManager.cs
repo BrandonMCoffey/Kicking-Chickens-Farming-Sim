@@ -13,8 +13,11 @@ public class GameManager : MonoBehaviour
 
 	[Header("Game References")]
 	[SerializeField] private Coop _coopController;
+	[SerializeField] private LayerMask _coopLayer = 0;
 	[SerializeField] private ChickenController _chickenController;
 	[SerializeField] private EggPool _eggController;
+	
+	public static LayerMask CoopLayer => Instance._coopLayer;
 	
 	[Header("VFX")]
 	[SerializeField] private ParticleSystem _petChickenParticles;

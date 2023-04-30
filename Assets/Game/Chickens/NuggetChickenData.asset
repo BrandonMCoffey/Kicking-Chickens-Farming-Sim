@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56a1e73613b04f87a26913c7c1a1835d, type: 3}
+  m_Name: NuggetChickenData
+  m_EditorClassIdentifier: 
+  chickenName: Nugget
+  _egg: {fileID: 0}
+  _eggHatchTime: 2
+  _eggLayTimeMinMax: {x: 10, y: 16}
+  _eggsPerLayMinMax: {x: 0, y: 0}
+  _chickenMatureTimeMinMax: {x: 4, y: 6}
+  _moveSpeed: 1
+  _rotateSpeed: 20
+  _goalReachedRange: 0.5
+  _waitTimeMinMax: {x: 2, y: 4}

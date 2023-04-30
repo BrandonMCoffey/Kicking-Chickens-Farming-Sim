@@ -1,12 +1,8 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using Economy;
 
 public class ButtonInvalid : MonoBehaviour
 {
-    [SerializeField] private int cost;
-
     [SerializeField] private float shakeAmount;
     [SerializeField] private float vertShake;
     [SerializeField] private float duration;
@@ -15,28 +11,17 @@ public class ButtonInvalid : MonoBehaviour
     [SerializeField] private float growAmount;
     [SerializeField] private float growDuration;
 
-    [SerializeField] private EconomyManager eco;
-
-    public void ChackIfValidPurchase()
-    {
-        if (!eco.CanAfford(cost))
-            ShakeButton();
-        else
-            PurchaseAnim();
-    }
-
     public void ShakeButton()
     {
-        float posOrigX = this.transform.position.x;
-        float posOrigY = this.transform.position.y;
+        var pos = transform.position;
 
-        LeanTween.moveX(this.gameObject, posOrigX + shakeAmount, duration * .25f).setEaseInQuint();
-        LeanTween.moveX(this.gameObject, posOrigX-shakeAmount, duration * .5f).setEaseInOutQuint().setDelay(duration *.25f);
-        LeanTween.moveX(this.gameObject, posOrigX + shakeAmount*.5f, duration * .25f).setEaseOutQuint().setDelay(duration *.75f);
+        LeanTween.moveX(gameObject, pos.x + shakeAmount, duration * .25f).setEaseInQuint();
+        LeanTween.moveX(gameObject, pos.x-shakeAmount, duration * .5f).setEaseInOutQuint().setDelay(duration *.25f);
+        LeanTween.moveX(gameObject, pos.x + shakeAmount*.5f, duration * .25f).setEaseOutQuint().setDelay(duration *.75f);
 
-        LeanTween.moveY(this.gameObject, posOrigY + vertShake, duration * .25f).setEaseInQuint();
-        LeanTween.moveY(this.gameObject, posOrigY -vertShake, duration * .5f).setEaseInOutQuint().setDelay(duration * .25f);
-        LeanTween.moveY(this.gameObject, posOrigY + vertShake * .5f, duration * .25f).setEaseOutQuint().setDelay(duration * .75f);
+        LeanTween.moveY(gameObject, pos.y + vertShake, duration * .25f).setEaseInQuint();
+        LeanTween.moveY(gameObject, pos.y -vertShake, duration * .5f).setEaseInOutQuint().setDelay(duration * .25f);
+        LeanTween.moveY(gameObject, pos.y + vertShake * .5f, duration * .25f).setEaseOutQuint().setDelay(duration * .75f);
 
         //LeanTween.moveLocalY(this.gameObject, vertShake, duration / 2);
         //LeanTween.moveLocalY(this.gameObject, -vertShake, duration / 2).setDelay(duration/2);
@@ -59,5 +44,4 @@ public class ButtonInvalid : MonoBehaviour
     {
         Debug.Log("valid purchase");
     }
-
 }

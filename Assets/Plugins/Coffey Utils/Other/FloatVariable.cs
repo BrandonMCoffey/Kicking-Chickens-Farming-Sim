@@ -5,6 +5,13 @@ public class FloatVariable : ScriptableObject
 {
     [SerializeField] private float _value;
 
+    #if UNITY_EDITOR
+    private void OnValidate()
+    {
+        Value = _value;
+    }
+    #endif
+
     public float Value
     {
         get => _value;

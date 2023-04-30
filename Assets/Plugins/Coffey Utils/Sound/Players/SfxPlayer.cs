@@ -34,15 +34,12 @@ namespace Game.SoundSystem
 
         private void LateUpdate()
         {
-            if (!_source.isPlaying)
-            {
-                Stop();
-            }
-            else if (_hasParent)
+            CheckStop();
+            if (_hasParent)
             {
                 if (!_parent)
                 {
-                    Debug.LogError("Parent Object Destroyed, please dont do that again :)");
+                    Debug.LogError("Parent Object Destroyed for 3D Spatial Audio Clip: " + _source.clip.name);
                     _hasParent = false;
                     return;
                 }
@@ -69,6 +66,12 @@ namespace Game.SoundSystem
             var source = Source;
             if (source.isPlaying) source.Stop();
             source.Play();
+            Invoke(nameof(CheckStop), source.clip.length + 0.1f);
+        }
+
+        private void CheckStop()
+        {
+            if (!_source.isPlaying) Stop();
         }
 
         [Button]

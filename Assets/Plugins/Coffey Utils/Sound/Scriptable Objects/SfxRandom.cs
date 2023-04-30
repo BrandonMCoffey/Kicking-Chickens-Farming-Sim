@@ -73,6 +73,7 @@ namespace Game.SoundSystem
             if (clip.UseClip)
             {
                 myProperties.Clip = clip.Clip;
+                myProperties.Null = myProperties.Clip == null;
                 return myProperties;
             }
             
@@ -91,6 +92,7 @@ namespace Game.SoundSystem
         [Button(Spacing = 30)]
         private void CopyAudioSourceSpatialSettings(AudioSource source)
         {
+            if (!source) return;
             _stereoPan = new RangedFloat(source.panStereo);
             _spatialBlend = new RangedFloat(source.spatialBlend);
             _dopplerLevel = new RangedFloat(source.dopplerLevel);

@@ -1,5 +1,7 @@
+using System;
 using System.Drawing;
 
+[AttributeUsage(AttributeTargets.Field | AttributeTargets.Property)]
 public class HighlightIfAttribute : HighlightableAttribute
 {
     public readonly string[] Targets;

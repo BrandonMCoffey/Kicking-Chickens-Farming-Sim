@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 namespace Coffey_Utils.Demo
@@ -35,7 +35,11 @@ namespace Coffey_Utils.Demo
         [Header("Highlight If Null")]
         [SerializeField, HighlightIfNull] private GameObject _highlightField;
         [SerializeField, HighlightIfNull(ColorField.Green)] private GameObject _highlightFieldGreen;
-        [SerializeField, HighlightIfNull] private bool _invalidField;
+	    [SerializeField, HighlightIfNull] private bool _invalidField;
+        
+	    [Header("Optional")]
+	    [SerializeField] private Optional<float> _optionalValue;
+	    [SerializeField] private Optional<Vector3> _optionalValue2;
 
         [Header("Show If")]
         [SerializeField] private bool _show;
@@ -50,13 +54,13 @@ namespace Coffey_Utils.Demo
             Debug.Log("Runs some code");
         }
 
-        [Button(Mode = ButtonMode.InPlayMode)]
+	    [Button(Mode = RuntimeMode.OnlyPlaying)]
         private void PlayModeOnlyButton()
         {
             Debug.Log("Runs some code only when the game is running");
         }
 
-        [Button(Mode = ButtonMode.NotInPlayMode)]
+	    [Button(Mode = RuntimeMode.OnlyEditor)]
         private void NotInPlayModeButton()
         {
             Debug.Log("Runs some code only when the game is not running");

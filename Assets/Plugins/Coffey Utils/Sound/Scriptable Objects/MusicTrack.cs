@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.Audio;
 
@@ -29,7 +29,8 @@ namespace Game.SoundSystem
         [SerializeField, ShowIf("_volumeFadeAtEnd")] private AnimationCurve _volumeFadeEndCurve = AnimationCurve.Linear(0, 1, 1, 0);
 
         public AudioClip Clip => _track;
-        public float StartTimeIfLooping => _startTimeIfLooping;
+	    public float StartTimeIfLooping => _startTimeIfLooping;
+	    public float FromStartWhenToPlayNextSong => _fromStartWhenToPlayNextSong;
         public bool VolumeFadeAtStart => _volumeFadeAtStart;
         public bool VolumeFadeAtEnd => _volumeFadeAtEnd;
         public float VolumeFadeStartTime => _volumeFadeStartTime;

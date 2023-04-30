@@ -9,13 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec27590b637c4990b228b0c385af356c, type: 3}
-  m_Name: DiabloFeedData
+  m_Script: {fileID: 11500000, guid: bcec7c2dcc4c2a54fa44c2439aaf8e30, type: 3}
+  m_Name: EggCount
   m_EditorClassIdentifier: 
-  _feedName: Diablo
-  _feedCost: 10
-  _feedStrength: 4
-  _feedDuration: 8
-  _feedAmount: 5
-  _feedMaterial: {fileID: 2100000, guid: 287a98b74e584d0488a46c50d5c1a6ca, type: 2}
-  _but: 0
+  _value: 2.4399996

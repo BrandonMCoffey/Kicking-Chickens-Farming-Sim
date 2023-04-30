@@ -1,15 +1,15 @@
-﻿using Audio;
-using UnityEngine;
-using UnityEngine.Serialization;
+﻿using UnityEngine;
 
 [CreateAssetMenu(fileName = "SO_ChickenData", menuName = "FarmScriptableObjects/Chicken", order = 0)]
 public class SO_ChickenDataBase : ScriptableObject
 {
 	[SerializeField] private string _chickenName;
+	[SerializeField] private GameObject _chickenArt;
 	[SerializeField] private int _chickenCost = 1;
 	[SerializeField] private SfxReference _chickenNoise;
 
 	public string ChickenName => _chickenName;
+	public GameObject ChickenArt => _chickenArt;
 	public int ChickenCost => _chickenCost;
 	public void PlayChickenNoiseSfx(Transform t) => _chickenNoise.PlayAtParentAndFollow(t);
     

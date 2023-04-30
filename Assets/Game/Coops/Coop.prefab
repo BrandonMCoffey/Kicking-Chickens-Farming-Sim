@@ -156,7 +156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68cec1e8d5f549049ad7bdb3c8944878, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _feed: {fileID: 6256445428540999531}
+  _feedRenderer: {fileID: 6256445428540999531}
 --- !u!1001 &6636383631437192227
 PrefabInstance:
   m_ObjectHideFlags: 0

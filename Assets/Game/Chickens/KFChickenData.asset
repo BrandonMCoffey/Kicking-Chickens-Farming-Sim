@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: KFChickenData
   m_EditorClassIdentifier: 
   _chickenName: KFChicken
+  _chickenArt: {fileID: 8131529004651704068, guid: 89ea85e801099c049bb3c8727108f4a8,
+    type: 3}
   _chickenCost: 1
   _chickenNoise:
     UseClip: 0

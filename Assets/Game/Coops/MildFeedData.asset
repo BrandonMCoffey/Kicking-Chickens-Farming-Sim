@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec27590b637c4990b228b0c385af356c, type: 3}
   m_Name: MildFeedData
   m_EditorClassIdentifier: 
-  feedName: Mild
-  feedPrice: 2
-  feedStrength: 1
-  feedDuration: 5
-  feedAmount: 1
-  feedMaterial: {fileID: 2100000, guid: cbeb91f0986c88b4ba669e5d59d40b23, type: 2}
+  _feedName: Mild
+  _feedCost: 2
+  _feedStrength: 1
+  _feedDuration: 5
+  _feedAmount: 1
+  _feedMaterial: {fileID: 2100000, guid: cbeb91f0986c88b4ba669e5d59d40b23, type: 2}
+  _but: 0

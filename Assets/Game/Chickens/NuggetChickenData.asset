@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: NuggetChickenData
   m_EditorClassIdentifier: 
   _chickenName: Nugget
+  _chickenArt: {fileID: 8131529004651704068, guid: 7d221f3888bf6d541b65002cc9408dac,
+    type: 3}
   _chickenCost: 1
   _chickenNoise:
     UseClip: 0

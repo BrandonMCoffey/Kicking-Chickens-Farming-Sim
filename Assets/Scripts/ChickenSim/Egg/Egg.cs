@@ -1,6 +1,4 @@
 ﻿using System.Collections;
-using Economy;
-using Audio;
 using UnityEngine;
 
 public class Egg : MonoBehaviour, IInteractable
@@ -35,7 +33,7 @@ public class Egg : MonoBehaviour, IInteractable
 	
 	public void Interact()
 	{
-		EconomyManager.Instance.AddEggs(1);
+		GameManager.Economy.AddEggs(1);
 		GameManager.EmitEggCollectVfx(transform.position, transform.eulerAngles, _particlesOnCollect);
 		_eggCollectSound.PlayAtPosition(transform.position);
 		Destroy(gameObject);
@@ -47,7 +45,7 @@ public class Egg : MonoBehaviour, IInteractable
 		_lifeTime += Time.deltaTime;
 		if (_lifeTime > _data.LifeSpan)
 		{
-			EconomyManager.Instance.AddEggs(_data.EggValue);
+			GameManager.Economy.AddEggs(_data.EggValue);
 			Destroy(gameObject);
 		}
 	}

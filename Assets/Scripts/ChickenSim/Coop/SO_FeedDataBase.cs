@@ -3,15 +3,25 @@
 [CreateAssetMenu(fileName = "SO_FeedData", menuName = "FarmScriptableObjects/Feed", order = 1)]
 public class SO_FeedDataBase : ScriptableObject
 {
-    public string feedName;
+    [SerializeField] private string _feedName;
     [Tooltip("How much the feed costs in eggs")]
-    public int feedPrice;
-    [Tooltip("How strong the feed is")]
-    public int feedStrength;
-    [Tooltip("How long the feed will last")]
-    public float feedDuration;
-    [Tooltip("How much feed is dropped at a time")]
-    public int feedAmount;
+    [SerializeField] private int _feedCost;
     [Tooltip("The material the feed will use")]
-    public Material feedMaterial;
+    [SerializeField] private Material _feedMaterial;
+
+    public string FeedName => _feedName;
+    public int FeedCost => _feedCost;
+    public Material FeedMaterial => _feedMaterial;
+    
+    [Header("Settings")]
+    [Tooltip("How strong the feed is")]
+    [SerializeField] private int _feedStrength;
+    [Tooltip("How long the feed will last")]
+    [SerializeField] private float _feedDuration;
+    [Tooltip("How much feed is dropped at a time")]
+    [SerializeField] private int _feedAmount;
+    
+    public int FeedStrength => _feedStrength;
+    public float FeedDuration => _feedDuration;
+    public int FeedAmount => _feedAmount;
 }

@@ -1,23 +1,22 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using Audio;
+﻿using UnityEngine;
 
 public class Chicken : MonoBehaviour, IInteractable
 {
 	[SerializeField] private SO_ChickenDataBase _data;
-	[SerializeField] private Transform _chickenArt;
-	
-	[Header("Debug")]
-	[SerializeField, ReadOnly] private ValidGroundPlane _groundPlane;
-	[SerializeField, ReadOnly] private float _layEggTimer;
-	[SerializeField, ReadOnly] private float _layEggTime;
-	[SerializeField, ReadOnly] private Vector3 _center;
-	[SerializeField, ReadOnly] private Vector3 _goal;
-	[SerializeField, ReadOnly] private bool _hasNotReachedGoal;
-	[SerializeField, ReadOnly] private float _waitTimer;
-	[SerializeField, ReadOnly] private float _waitTime;
+	[SerializeField] private ValidGroundPlane _groundPlane;
+	[SerializeField] private float _layEggTimer;
+	[SerializeField] private float _layEggTime;
+	[SerializeField] private Vector3 _center;
+	[SerializeField] private Vector3 _goal;
+	[SerializeField] private bool _hasNotReachedGoal;
+	[SerializeField] private float _waitTimer;
+	[SerializeField] private float _waitTime;
 
+	public void SetChicken(SO_ChickenDataBase data)
+	{
+		_data = data;
+	}
+	
 	private void Start()
 	{
 		_center = transform.localPosition;
@@ -41,12 +40,11 @@ public class Chicken : MonoBehaviour, IInteractable
 	private void CheckGroundPlane()
 	{
 		if (_groundPlane) return;
-		SetGroundPlane(GameManager.GetRandomGrondPlane());
+		SetGroundPlane(GameManager.GetRandomGroundPlane());
 	}
 	
 	public void SetGroundPlane(ValidGroundPlane plane)
 	{
-		_chickenArt.gameObject.SetActive(plane);
 		_groundPlane = plane;
 		if (plane)
 		{
@@ -101,7 +99,7 @@ public class Chicken : MonoBehaviour, IInteractable
 			_layEggTimer = 0;
 			_layEggTime = _data.EggLayTime;
 			
-			GameManager.Instance.SpawnEgg(_data.EggPrefab, transform);
+			GameManager.SpawnEgg(_data.EggPrefab, transform);
 			_data.PlayEggLaySfx(transform);
 		}
 	}

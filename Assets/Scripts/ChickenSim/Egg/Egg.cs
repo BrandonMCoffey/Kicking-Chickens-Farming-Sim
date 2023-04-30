@@ -5,15 +5,15 @@ using UnityEngine;
 
 public class Egg : MonoBehaviour, IInteractable
 {
-	[SerializeField] private SO_EggData _data;
+	[SerializeField] private SO_ChickenDataBase _data;
 	[SerializeField, ReadOnly] private float _lifeTime;
 	[SerializeField, ReadOnly] private bool _hatched;
-	
+
 	[Header("VFX")]
-	[SerializeField] private GameObject _eggCollectEffect;
+	[SerializeField] private int _particlesOnCollect = 10;
 
 	[Header("SFX")]
-	[SerializeField] private AudioClip _eggLaySound;
+	[SerializeField] private SfxReference _eggCollectSound;
 
 	public void Hatch()
 	{
@@ -36,8 +36,8 @@ public class Egg : MonoBehaviour, IInteractable
 	public void Interact()
 	{
 		EconomyManager.Instance.AddEggs(1);
-		Instantiate(_eggCollectEffect, transform.position, Quaternion.identity);
-		AudioManager.PlayClip3D(_eggLaySound, 0.1f);
+		GameManager.EmitEggCollectVfx(transform.position, transform.eulerAngles, _particlesOnCollect);
+		_eggCollectSound.PlayAtPosition(transform.position);
 		Destroy(gameObject);
 	}
 	

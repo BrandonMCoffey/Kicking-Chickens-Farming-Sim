@@ -1,30 +1,34 @@
-﻿using UnityEngine;
+﻿using Audio;
+using UnityEngine;
+using UnityEngine.Serialization;
 
 [CreateAssetMenu(fileName = "SO_ChickenData", menuName = "FarmScriptableObjects/Chicken", order = 0)]
 public class SO_ChickenDataBase : ScriptableObject
 {
-	public string chickenName;
+	[SerializeField] private string _chickenName;
+	[SerializeField] private int _chickenCost = 1;
+	[SerializeField] private SfxReference _chickenNoise;
+
+	public string ChickenName => _chickenName;
+	public int ChickenCost => _chickenCost;
+	public void PlayChickenNoiseSfx(Transform t) => _chickenNoise.PlayAtParentAndFollow(t);
     
 	[Header("Eggs")]
-	[SerializeField] private Egg _egg;
-	[SerializeField] private float _eggHatchTime = 2f;
+	[SerializeField, HighlightIfNull] private Egg _egg;
     [Tooltip("The number of ticks between lay events")]
     [SerializeField] private Vector2 _eggLayTimeMinMax = new Vector2(8, 12);
-	[Tooltip("The number of eggs per lay event")]
-	[SerializeField] private Vector2Int _eggsPerLayMinMax;
+    [SerializeField] private SfxReference _eggLaySfx;
+	[SerializeField] private float _hatchTime = 1;
+	[SerializeField] private float _lifeSpan = 10;
+	[SerializeField] private int _eggValue = 1;
 	
 	public Egg EggPrefab => _egg;
-	public float EggHatchTime => _eggHatchTime;
-	public float eggLayTime => Random.Range(_eggLayTimeMinMax.x, _eggLayTimeMinMax.y);
-	public int EggsPerLay => Random.Range(_eggsPerLayMinMax.x, _eggsPerLayMinMax.y);
+	public float EggLayTime => Random.Range(_eggLayTimeMinMax.x, _eggLayTimeMinMax.y);
+	public void PlayEggLaySfx(Transform t) => _eggLaySfx.PlayAtParentAndFollow(t);
+	public float HatchTime => _hatchTime;
+	public float LifeSpan => _lifeSpan;
+	public int EggValue => _eggValue;
 	
-	
-	[Header("Chicken")]
-	[SerializeField] private Vector2 _chickenMatureTimeMinMax = new Vector2(4f, 6f);
-	
-	public float ChickenMatureTime => Random.Range(_chickenMatureTimeMinMax.x, _chickenMatureTimeMinMax.y);
-    
-    
 	[Header("Movement")]
 	[SerializeField] private float _moveSpeed = 5f;
 	[SerializeField] private float _rotateSpeed = 20f;

@@ -8,10 +8,12 @@ public class GameManager : MonoBehaviour
 	private static List<ValidGroundPlane> _planes = new List<ValidGroundPlane>();
     
 	[SerializeField] private EggPool _eggController;
-	[SerializeField] private ParticleSystem _heartParticles;
-	[SerializeField] private int _heartsPerClick = 1;
 	[SerializeField] private Transform _chickenParent;
 	[SerializeField] private List<Chicken> _chickenPrefabs;
+	
+	[Header("VFX")]
+	[SerializeField] private ParticleSystem _petChickenParticles;
+	[SerializeField] private ParticleSystem _eggCollectParticles;
 	
 	[Header("Debug")]
 	[SerializeField, ReadOnly] private List<Chicken> _spawnedChickens;
@@ -67,9 +69,12 @@ public class GameManager : MonoBehaviour
 		_planes.Remove(plane);
 	}
 	
-	public static void EmitHearts(Vector3 pos, Vector3 rot)
+	public static void EmitChickenPetVfx(Vector3 pos, Vector3 rot, int count) => EmitVfx(Instance._petChickenParticles, pos, rot, count);
+	public static void EmitEggCollectVfx(Vector3 pos, Vector3 rot, int count) => EmitVfx(Instance._eggCollectParticles, pos, rot, count);
+	private static void EmitVfx(ParticleSystem particles, Vector3 pos, Vector3 rot, int count)
 	{
-		Instance._heartParticles.transform.SetPositionAndRotation(pos, Quaternion.Euler(rot));
-		Instance._heartParticles.Emit(Instance._heartsPerClick);
+		if (!particles) return;
+		particles.transform.SetPositionAndRotation(pos, Quaternion.Euler(rot));
+		particles.Emit(count);
 	}
 }

@@ -18,19 +18,17 @@ public class Chicken : MonoBehaviour, IInteractable
 	[SerializeField, ReadOnly] private float _waitTimer;
 	[SerializeField, ReadOnly] private float _waitTime;
 
-	[Header("SFX")]
-	[SerializeField] private AudioClip _chickenNoise;
-	[SerializeField] private AudioClip _eggLayNoise;
-
 	private void Start()
 	{
 		_center = transform.localPosition;
 		_goal = _center;
-		_layEggTime = _data.eggLayTime;
+		_layEggTime = _data.EggLayTime;
 		_waitTime = _data.WaitTime;
 		
 		InvokeRepeating(nameof(PlayChickenSound), 5.0f, Random.Range(15.0f, 50.0f));
 	}
+	
+	private void PlayChickenSound() => _data.PlayChickenNoiseSfx(transform);
 	
 	private void Update()
 	{
@@ -92,7 +90,7 @@ public class Chicken : MonoBehaviour, IInteractable
 		// TODO: This can be better (Local only)
 		// TODO: This can be better (Local only)
 		var move = Vector3.ProjectOnPlane(transform.forward, _groundPlane.GetNormal());
-		transform.position += move * _data.MoveSpeed * Time.deltaTime;
+		transform.position += move * (_data.MoveSpeed * Time.deltaTime);
 	}
 	
 	private void LayEggUpdate()
@@ -101,21 +99,16 @@ public class Chicken : MonoBehaviour, IInteractable
 		if (_layEggTimer > _layEggTime)
 		{
 			_layEggTimer = 0;
-			_layEggTime = _data.eggLayTime;
+			_layEggTime = _data.EggLayTime;
 			
 			GameManager.Instance.SpawnEgg(_data.EggPrefab, transform);
-			AudioManager.PlayClip3D(_eggLayNoise, 0.1f);
+			_data.PlayEggLaySfx(transform);
 		}
-	}
-	
-	private void PlayChickenSound()
-	{
-		AudioManager.PlayClip3D(_chickenNoise, 0.1f);
 	}
 	
 	[Button]
 	public void Interact()
 	{
-		GameManager.EmitHearts(transform.position, transform.eulerAngles);
+		GameManager.EmitChickenPetVfx(transform.position, transform.eulerAngles, 1);
 	}
 }

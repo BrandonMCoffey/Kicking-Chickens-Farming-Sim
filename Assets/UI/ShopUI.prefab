@@ -6611,6 +6611,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3605010113116731102}
   - component: {fileID: 9036274818573605648}
+  - component: {fileID: 1081422501}
   - component: {fileID: 3703874707562232664}
   m_Layer: 5
   m_Name: txt_count
@@ -6647,6 +6648,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5397141302743993394}
   m_CullTransparentMesh: 1
+--- !u!114 &1081422501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5397141302743993394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66732b797b2482849ac4f00f4e396896, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _float: {fileID: 11400000, guid: 778c97bd25479e2479d0ed6fc424f8fa, type: 2}
+  _text: {fileID: 3703874707562232664}
+  _customString: 0
+  _beforeFloat: 'Value: '
+  _afterFloat: 
 --- !u!114 &3703874707562232664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6749,6 +6767,7 @@ GameObject:
   - component: {fileID: 3499174053825603011}
   - component: {fileID: 5923287670226830919}
   - component: {fileID: 149703210990211130}
+  - component: {fileID: 1763412261}
   - component: {fileID: 4765876702597567395}
   m_Layer: 5
   m_Name: btn_buy
@@ -6861,7 +6880,33 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5923287670226830919}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1763412261}
+        m_TargetAssemblyTypeName: PurchaseChicken, Assembly-CSharp
+        m_MethodName: AttemptPurchase
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1763412261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5403101951741425889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da595339ceda3d148bff48b6feff2a65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _chickenToPurchase: {fileID: 11400000, guid: 76bf5957bb9b61f49af6f69f0f2354a0, type: 2}
+  _invalidResponse: {fileID: 4765876702597567395}
 --- !u!114 &4765876702597567395
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6874,14 +6919,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84d8a6080364b984d88d9c40fbf48791, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 1
   shakeAmount: 7
   vertShake: 5
   duration: 0.4
   denyText: {fileID: 3982576654722071692}
   growAmount: 1.3
   growDuration: 0.25
-  eco: {fileID: 0}
 --- !u!1 &5444664803468466214
 GameObject:
   m_ObjectHideFlags: 0
@@ -10036,14 +10079,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84d8a6080364b984d88d9c40fbf48791, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 1
   shakeAmount: 7
   vertShake: 5
   duration: 0.4
   denyText: {fileID: 6458068001064493301}
   growAmount: 0
   growDuration: 0
-  eco: {fileID: 0}
 --- !u!1 &7698932762426434169
 GameObject:
   m_ObjectHideFlags: 0
@@ -10792,6 +10833,7 @@ GameObject:
   - component: {fileID: 9119014729118286285}
   - component: {fileID: 1434981405100378221}
   - component: {fileID: 4119214416000984494}
+  - component: {fileID: 6962774026070949263}
   - component: {fileID: 1215613236781208666}
   m_Layer: 5
   m_Name: btn_buy (2)
@@ -10904,7 +10946,33 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1434981405100378221}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6962774026070949263}
+        m_TargetAssemblyTypeName: PurchaseFeed, Assembly-CSharp
+        m_MethodName: AttemptPurchase
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6962774026070949263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8160002921092524722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 114e2bcf30e640d4793b9bdc457d1923, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _feedToPurchase: {fileID: 11400000, guid: 974729289ae9fe54d89413cc6f0b6459, type: 2}
+  _invalidResponse: {fileID: 1215613236781208666}
 --- !u!114 &1215613236781208666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10917,14 +10985,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84d8a6080364b984d88d9c40fbf48791, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 1
   shakeAmount: 7
   vertShake: 5
   duration: 0.4
   denyText: {fileID: 3514623817514313054}
   growAmount: 1.3
   growDuration: 0.25
-  eco: {fileID: 0}
 --- !u!1 &8194731514104469155
 GameObject:
   m_ObjectHideFlags: 0
@@ -11485,6 +11551,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1845478830270892740}
   - component: {fileID: 5151303375761982457}
+  - component: {fileID: 2024634946}
   - component: {fileID: 6368001164180837492}
   m_Layer: 5
   m_Name: txt_count
@@ -11521,6 +11588,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8897808156173744382}
   m_CullTransparentMesh: 1
+--- !u!114 &2024634946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8897808156173744382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66732b797b2482849ac4f00f4e396896, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _float: {fileID: 11400000, guid: 778c97bd25479e2479d0ed6fc424f8fa, type: 2}
+  _text: {fileID: 6368001164180837492}
+  _customString: 0
+  _beforeFloat: 'Value: '
+  _afterFloat: 
 --- !u!114 &6368001164180837492
 MonoBehaviour:
   m_ObjectHideFlags: 0

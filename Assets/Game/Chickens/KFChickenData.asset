@@ -12,12 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56a1e73613b04f87a26913c7c1a1835d, type: 3}
   m_Name: KFChickenData
   m_EditorClassIdentifier: 
-  chickenName: KFChicken
+  _chickenName: KFChicken
+  _chickenCost: 1
+  _chickenNoise:
+    UseClip: 0
+    Clip: {fileID: 0}
+    Base: {fileID: 11400000, guid: c61c7976d7faf894d8cd280610fe1085, type: 2}
   _egg: {fileID: 3511945319812538228, guid: 0488295644f908f4bb53f21e422a96b4, type: 3}
-  _eggHatchTime: 2
   _eggLayTimeMinMax: {x: 6, y: 12}
-  _eggsPerLayMinMax: {x: 0, y: 0}
-  _chickenMatureTimeMinMax: {x: 4, y: 6}
+  _eggLaySfx:
+    UseClip: 0
+    Clip: {fileID: 0}
+    Base: {fileID: 11400000, guid: 3d041f4ffc4f25542a5806d26a1a50ea, type: 2}
+  _hatchTime: 1
+  _lifeSpan: 10
+  _eggValue: 1
   _moveSpeed: 0.8
   _rotateSpeed: 20
   _goalReachedRange: 0.5

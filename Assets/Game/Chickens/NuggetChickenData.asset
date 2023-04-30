@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: NuggetChickenData
   m_EditorClassIdentifier: 
   chickenName: Nugget
-  _egg: {fileID: 0}
+  _egg: {fileID: 3511945319812538228, guid: 0488295644f908f4bb53f21e422a96b4, type: 3}
   _eggHatchTime: 2
   _eggLayTimeMinMax: {x: 10, y: 16}
   _eggsPerLayMinMax: {x: 0, y: 0}

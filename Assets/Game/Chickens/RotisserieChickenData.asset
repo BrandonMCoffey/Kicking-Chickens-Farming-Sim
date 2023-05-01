@@ -21,12 +21,12 @@ MonoBehaviour:
     Clip: {fileID: 0}
     Base: {fileID: 11400000, guid: c61c7976d7faf894d8cd280610fe1085, type: 2}
   _egg: {fileID: 3511945319812538228, guid: 0488295644f908f4bb53f21e422a96b4, type: 3}
-  _eggLayTimeMinMax: {x: 14, y: 20}
+  _eggLayTimeMinMax: {x: 6, y: 12}
   _eggLaySfx:
     UseClip: 0
     Clip: {fileID: 0}
     Base: {fileID: 11400000, guid: 3d041f4ffc4f25542a5806d26a1a50ea, type: 2}
-  _hatchTime: 1
+  _hatchTime: 1.2
   _lifeSpan: 10
   _eggValue: 4
   _moveSpeed: 1

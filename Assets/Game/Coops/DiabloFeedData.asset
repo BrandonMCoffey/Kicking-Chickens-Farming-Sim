@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: DiabloFeedData
   m_EditorClassIdentifier: 
   _feedName: Diablo
-  _feedCost: 10
-  _feedStrength: 4
-  _feedDuration: 8
-  _feedAmount: 5
+  _feedCost: 20
   _feedMaterial: {fileID: 2100000, guid: 287a98b74e584d0488a46c50d5c1a6ca, type: 2}
-  _but: 0
+  _chickenParticleMaterial: {fileID: 2100000, guid: 2c9e0f5b257ade246a30cfb770945114,
+    type: 2}
+  _feedStrength: 4
+  _feedDuration: 25
+  _feedAmount: 5

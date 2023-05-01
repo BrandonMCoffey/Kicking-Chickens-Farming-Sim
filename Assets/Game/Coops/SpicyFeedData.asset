@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: SpicyFeedData
   m_EditorClassIdentifier: 
   _feedName: Spicy
-  _feedCost: 5
-  _feedStrength: 2
-  _feedDuration: 2.5
-  _feedAmount: 3
+  _feedCost: 10
   _feedMaterial: {fileID: 2100000, guid: 33230efdb4124574a8c402d6fbd995ab, type: 2}
-  _but: 0
+  _chickenParticleMaterial: {fileID: 2100000, guid: 75d8b0d651ee73e4b8da3799ccc34187,
+    type: 2}
+  _feedStrength: 2
+  _feedDuration: 20
+  _feedAmount: 5

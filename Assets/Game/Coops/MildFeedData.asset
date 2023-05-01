@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: MildFeedData
   m_EditorClassIdentifier: 
   _feedName: Mild
-  _feedCost: 2
-  _feedStrength: 1
-  _feedDuration: 5
-  _feedAmount: 1
+  _feedCost: 5
   _feedMaterial: {fileID: 2100000, guid: cbeb91f0986c88b4ba669e5d59d40b23, type: 2}
-  _but: 0
+  _chickenParticleMaterial: {fileID: 2100000, guid: d89c0088a48c0be4a9513115609b67e2,
+    type: 2}
+  _feedStrength: 1
+  _feedDuration: 15
+  _feedAmount: 5

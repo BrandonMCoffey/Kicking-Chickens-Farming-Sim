@@ -14,7 +14,9 @@ public class Chicken : MonoBehaviour, IInteractable
 	[SerializeField] private float _waitTime;
 	[SerializeField] private bool _hasFeed;
 	[SerializeField] private float _feedStrength;
-	[SerializeField] private ParticleSystem _feedParticles;
+	[SerializeField] private ParticleSystemRenderer _feedParticles;
+	
+	public bool HasFeed => _hasFeed;
 
 	public void SetChicken(SO_ChickenDataBase data)
 	{
@@ -23,7 +25,7 @@ public class Chicken : MonoBehaviour, IInteractable
 	
 	private void Awake()
 	{
-		_feedParticles = GetComponentInChildren<ParticleSystem>();
+		_feedParticles = GetComponentInChildren<ParticleSystemRenderer>();
 	}
 	
 	private void Start()
@@ -125,7 +127,10 @@ public class Chicken : MonoBehaviour, IInteractable
 			_layEggTimer = 0;
 			_layEggTime = _data.EggLayTime;
 			
-			GameManager.SpawnEgg(_data, transform);
+			for (int i = 0; i <= _feedStrength; i++)
+			{
+				GameManager.SpawnEgg(_data, transform, _feedStrength * 0.2f);
+			}
 			_data.PlayEggLaySfx(transform);
 		}
 	}
@@ -141,7 +146,10 @@ public class Chicken : MonoBehaviour, IInteractable
 	{
 		_hasFeed = true;
 		_feedStrength = feedData.FeedStrength;
+		_feedParticles.material = feedData.ChickenParticleMaterial;
+		_feedParticles.gameObject.SetActive(true);
 		yield return new WaitForSeconds(feedData.FeedDuration);
+		_feedParticles.gameObject.SetActive(false);
 		_feedStrength = 0;
 		_hasFeed = false;
 	}

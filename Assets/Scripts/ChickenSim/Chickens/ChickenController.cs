@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class ChickenController : MonoBehaviour
@@ -27,4 +27,26 @@ public class ChickenController : MonoBehaviour
 		
         _spawnedChickens.Add(chicken);
     }
+    
+	public void AddFeed(SO_FeedDataBase feedData)
+	{
+		for (int i = 0; i < feedData.FeedAmount; i++)
+		{
+			if (!GiveFeedToRandomChicken(feedData)) break;
+		}
+	}
+	
+	private bool GiveFeedToRandomChicken(SO_FeedDataBase feedData)
+	{
+		for (int j = 0; j < _spawnedChickens.Count * 2; j++)
+		{
+			var chicken = _spawnedChickens[Random.Range(0, _spawnedChickens.Count)];
+			if (!chicken.HasFeed)
+			{
+				chicken.SetFeed(feedData);
+				return true;
+			}
+		}
+		return false;
+	}
 }

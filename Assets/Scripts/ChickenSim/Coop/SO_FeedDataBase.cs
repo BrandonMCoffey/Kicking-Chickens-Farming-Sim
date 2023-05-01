@@ -8,10 +8,12 @@ public class SO_FeedDataBase : ScriptableObject
     [SerializeField] private int _feedCost;
     [Tooltip("The material the feed will use")]
     [SerializeField] private Material _feedMaterial;
+	[SerializeField] private Material _chickenParticleMaterial;
 
     public string FeedName => _feedName;
     public int FeedCost => _feedCost;
-    public Material FeedMaterial => _feedMaterial;
+	public Material FeedMaterial => _feedMaterial;
+	public Material ChickenParticleMaterial => _chickenParticleMaterial;
     
     [Header("Settings")]
     [Tooltip("How strong the feed is")]

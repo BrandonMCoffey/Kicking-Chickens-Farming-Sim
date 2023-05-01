@@ -2,9 +2,10 @@
 
 public class EggPool : MonoBehaviour
 {
-	public void SpawnEgg(Egg eggPrefab, Transform parent)
+	public void SpawnEgg(SO_ChickenDataBase chickenData, Transform parent)
 	{
-		var egg = Instantiate(eggPrefab, parent.position, parent.rotation, transform);
+		var egg = Instantiate(chickenData.EggPrefab, parent.position, parent.rotation, transform);
+		egg.SetData(chickenData);
 		egg.Hatch();
 	}
 }

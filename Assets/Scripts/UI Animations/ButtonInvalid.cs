@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 
 public class ButtonInvalid : MonoBehaviour
@@ -38,10 +38,5 @@ public class ButtonInvalid : MonoBehaviour
         yield return new WaitForSeconds(duration);
         if (denyText != null)
             denyText.SetActive(false);
-    }
-
-    public void PurchaseAnim()
-    {
-        Debug.Log("valid purchase");
     }
 }

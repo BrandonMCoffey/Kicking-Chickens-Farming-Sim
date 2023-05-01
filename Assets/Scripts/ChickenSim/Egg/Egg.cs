@@ -12,6 +12,11 @@ public class Egg : MonoBehaviour, IInteractable
 
 	[Header("SFX")]
 	[SerializeField] private SfxReference _eggCollectSound;
+	
+	public void SetData(SO_ChickenDataBase data)
+	{
+		_data = data;
+	}
 
 	public void Hatch()
 	{
@@ -33,7 +38,7 @@ public class Egg : MonoBehaviour, IInteractable
 	
 	public void Interact()
 	{
-		GameManager.Economy.AddEggs(1);
+		GameManager.Economy.AddEggs(_data.EggValue);
 		GameManager.EmitEggCollectVfx(transform.position, transform.eulerAngles, _particlesOnCollect);
 		_eggCollectSound.PlayAtPosition(transform.position);
 		Destroy(gameObject);
@@ -45,6 +50,7 @@ public class Egg : MonoBehaviour, IInteractable
 		_lifeTime += Time.deltaTime;
 		if (_lifeTime > _data.LifeSpan)
 		{
+			// Auto Collect Egg
 			GameManager.Economy.AddEggs(_data.EggValue);
 			Destroy(gameObject);
 		}

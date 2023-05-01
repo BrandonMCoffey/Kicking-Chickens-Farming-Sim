@@ -15,7 +15,7 @@ MonoBehaviour:
   _chickenName: KFChicken
   _chickenArt: {fileID: 8131529004651704068, guid: 89ea85e801099c049bb3c8727108f4a8,
     type: 3}
-  _chickenCost: 10
+  _chickenCost: 100
   _chickenNoise:
     UseClip: 0
     Clip: {fileID: 0}
@@ -28,8 +28,8 @@ MonoBehaviour:
     Base: {fileID: 11400000, guid: 3d041f4ffc4f25542a5806d26a1a50ea, type: 2}
   _hatchTime: 1
   _lifeSpan: 10
-  _eggValue: 4
-  _moveSpeed: 0.8
-  _rotateSpeed: 20
-  _goalReachedRange: 0.5
-  _waitTimeMinMax: {x: 2, y: 4}
+  _eggValue: 10
+  _moveSpeed: 1.6
+  _rotateSpeed: 30
+  _goalReachedRange: 0.8
+  _waitTimeMinMax: {x: 1, y: 8}

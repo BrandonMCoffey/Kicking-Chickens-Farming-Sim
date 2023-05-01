@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class Chicken : MonoBehaviour, IInteractable
 {
@@ -11,10 +12,18 @@ public class Chicken : MonoBehaviour, IInteractable
 	[SerializeField] private bool _hasNotReachedGoal;
 	[SerializeField] private float _waitTimer;
 	[SerializeField] private float _waitTime;
+	[SerializeField] private bool _hasFeed;
+	[SerializeField] private float _feedStrength;
+	[SerializeField] private ParticleSystem _feedParticles;
 
 	public void SetChicken(SO_ChickenDataBase data)
 	{
 		_data = data;
+	}
+	
+	private void Awake()
+	{
+		_feedParticles = GetComponentInChildren<ParticleSystem>();
 	}
 	
 	private void Start()
@@ -23,6 +32,7 @@ public class Chicken : MonoBehaviour, IInteractable
 		_goal = _center;
 		_layEggTime = _data.EggLayTime;
 		_waitTime = _data.WaitTime;
+		_feedParticles.gameObject.SetActive(false);
 		
 		InvokeRepeating(nameof(PlayChickenSound), 5.0f, Random.Range(15.0f, 50.0f));
 	}
@@ -115,9 +125,25 @@ public class Chicken : MonoBehaviour, IInteractable
 			_layEggTimer = 0;
 			_layEggTime = _data.EggLayTime;
 			
-			GameManager.SpawnEgg(_data.EggPrefab, transform);
+			GameManager.SpawnEgg(_data, transform);
 			_data.PlayEggLaySfx(transform);
 		}
+	}
+	
+	public bool SetFeed(SO_FeedDataBase feedData)
+	{
+		if (_hasFeed) return false;
+		StartCoroutine(FeedEffect(feedData));
+		return true;
+	}
+	
+	private IEnumerator FeedEffect(SO_FeedDataBase feedData)
+	{
+		_hasFeed = true;
+		_feedStrength = feedData.FeedStrength;
+		yield return new WaitForSeconds(feedData.FeedDuration);
+		_feedStrength = 0;
+		_hasFeed = false;
 	}
 	
 	[Button]

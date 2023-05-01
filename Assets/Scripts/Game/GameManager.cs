@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour
     // Game Actions
     public static void SetFeed(SO_FeedDataBase feedData) => Instance._coopController.SetFeed(feedData);
     public static void SpawnChicken(SO_ChickenDataBase chickenData) => Instance._chickenController.SpawnChicken(chickenData);
-    public static void SpawnEgg(Egg eggPrefab, Transform parent) => Instance._eggController.SpawnEgg(eggPrefab, parent);
+	public static void SpawnEgg(SO_ChickenDataBase chickenData, Transform parent) => Instance._eggController.SpawnEgg(chickenData, parent);
 
     // VFX
 	public static void EmitChickenPetVfx(Vector3 pos, Vector3 rot, int count) => EmitVfx(Instance._petChickenParticles, pos, rot, count);

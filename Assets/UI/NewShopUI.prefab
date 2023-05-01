@@ -6172,7 +6172,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _chickenToPurchase: {fileID: 11400000, guid: 76bf5957bb9b61f49af6f69f0f2354a0, type: 2}
   _invalidResponse: {fileID: 4765876702597567395}
-  _costText: {fileID: 0}
+  _costText: {fileID: 2406414317035059580}
 --- !u!114 &4765876702597567395
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6860,8 +6860,8 @@ MonoBehaviour:
   vertShake: 5
   duration: 0.4
   denyText: {fileID: 2203251572641661760}
-  growAmount: 0
-  growDuration: 0
+  growAmount: 1.3
+  growDuration: 0.25
 --- !u!1 &5840273351103045574
 GameObject:
   m_ObjectHideFlags: 0
@@ -9252,8 +9252,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _chickenToPurchase: {fileID: 11400000, guid: aa9e31a46d4cf714a920d68506927afd, type: 2}
-  _invalidResponse: {fileID: 4765876702597567395}
-  _costText: {fileID: 0}
+  _invalidResponse: {fileID: 3687428635656816081}
+  _costText: {fileID: 6863034205726180855}
 --- !u!114 &3687428635656816081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10266,8 +10266,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _chickenToPurchase: {fileID: 11400000, guid: 98068829adcfac14eb50109c917da6dd, type: 2}
-  _invalidResponse: {fileID: 4765876702597567395}
-  _costText: {fileID: 0}
+  _invalidResponse: {fileID: 1215613236781208666}
+  _costText: {fileID: 6124858637353505776}
 --- !u!114 &1215613236781208666
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -6091,6 +6091,9 @@ MonoBehaviour:
   _hasNotReachedGoal: 0
   _waitTimer: 0
   _waitTime: 0
+  _hasFeed: 0
+  _feedStrength: 0
+  _feedParticles: {fileID: 0}
 --- !u!1 &770137983
 GameObject:
   m_ObjectHideFlags: 0
@@ -6246,6 +6249,9 @@ MonoBehaviour:
   _hasNotReachedGoal: 0
   _waitTimer: 0
   _waitTime: 0
+  _hasFeed: 0
+  _feedStrength: 0
+  _feedParticles: {fileID: 0}
 --- !u!1 &987066488
 GameObject:
   m_ObjectHideFlags: 0
@@ -6449,6 +6455,9 @@ MonoBehaviour:
   _hasNotReachedGoal: 0
   _waitTimer: 0
   _waitTime: 0
+  _hasFeed: 0
+  _feedStrength: 0
+  _feedParticles: {fileID: 0}
 --- !u!1 &1349137416
 GameObject:
   m_ObjectHideFlags: 0
@@ -6765,6 +6774,11 @@ PrefabInstance:
       propertyPath: panelToActivate
       value: 
       objectReference: {fileID: 1877068124}
+    - target: {fileID: 4878447031995520958, guid: 6f629c8639561f847b69ed1c7041686d,
+        type: 3}
+      propertyPath: panelToDeactivate
+      value: 
+      objectReference: {fileID: 770137983}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f629c8639561f847b69ed1c7041686d, type: 3}
 --- !u!224 &1456268900 stripped
@@ -7639,6 +7653,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8172726225902595111, guid: aae7b2d6b09f41d4fbdd19107f376ff7,
+        type: 3}
+      propertyPath: panelToActivate
+      value: 
+      objectReference: {fileID: 770137983}
     - target: {fileID: 8283710391340688104, guid: aae7b2d6b09f41d4fbdd19107f376ff7,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -13167,6 +13186,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8172726225902595111, guid: ab064a1da9f2956479d7e07ca314203e,
+        type: 3}
+      propertyPath: panelToActivate
+      value: 
+      objectReference: {fileID: 770137983}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab064a1da9f2956479d7e07ca314203e, type: 3}
 --- !u!224 &8633358386686643025 stripped

@@ -129,7 +129,7 @@ public class Chicken : MonoBehaviour, IInteractable
 			
 			for (int i = 0; i <= _feedStrength; i++)
 			{
-				GameManager.SpawnEgg(_data, transform, _feedStrength * 0.2f);
+				GameManager.SpawnEgg(_data, transform, _feedStrength * 0.05f);
 			}
 			_data.PlayEggLaySfx(transform);
 		}

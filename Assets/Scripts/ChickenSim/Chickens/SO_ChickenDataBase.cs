@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using CoffeyUtils;
 
 [CreateAssetMenu(fileName = "SO_ChickenData", menuName = "FarmScriptableObjects/Chicken", order = 0)]
 public class SO_ChickenDataBase : ScriptableObject

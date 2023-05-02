@@ -1,5 +1,6 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System;
+using CoffeyUtils;
 
 public class EconomyManager : MonoBehaviour
 {

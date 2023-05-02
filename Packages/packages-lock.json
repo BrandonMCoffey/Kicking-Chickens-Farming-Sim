@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "com.brandoncoffey.coffeyutils": {
+      "version": "https://github.com/BrandonMCoffey/CoffeyUtils.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "336ed98630dc4c4d293c541a6c79de5d1137720d"
+    },
     "com.unity.editorcoroutines": {
       "version": "1.0.0",
       "depth": 1,

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using CoffeyUtils;
 
 public class Egg : MonoBehaviour, IInteractable
 {

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using TMPro;
+using CoffeyUtils;
 
 public class PurchaseChicken : MonoBehaviour
 {

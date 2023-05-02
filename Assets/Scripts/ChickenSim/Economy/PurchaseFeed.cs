@@ -5,7 +5,8 @@ public class PurchaseFeed : MonoBehaviour
 {
     [SerializeField] private SO_FeedDataBase _feedToPurchase;
 	[SerializeField] private ButtonInvalid _invalidResponse;
-	[SerializeField] private TMP_Text _costText;
+    [SerializeField] private ButtonPurchase _purchaseResponse;
+    [SerializeField] private TMP_Text _costText;
 
     private void OnValidate()
     {
@@ -24,6 +25,7 @@ public class PurchaseFeed : MonoBehaviour
         if (GameManager.Economy.AttemptPurchase(_feedToPurchase.FeedCost))
         {
             GameManager.SetFeed(_feedToPurchase);
+            _purchaseResponse.ConfirmPurchaseBtn();
         }
         else
         {

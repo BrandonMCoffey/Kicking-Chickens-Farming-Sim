@@ -6907,6 +6907,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _chickenToPurchase: {fileID: 11400000, guid: 76bf5957bb9b61f49af6f69f0f2354a0, type: 2}
   _invalidResponse: {fileID: 4765876702597567395}
+  _costText: {fileID: 0}
 --- !u!114 &4765876702597567395
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10973,6 +10974,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _feedToPurchase: {fileID: 11400000, guid: 974729289ae9fe54d89413cc6f0b6459, type: 2}
   _invalidResponse: {fileID: 1215613236781208666}
+  _costText: {fileID: 0}
 --- !u!114 &1215613236781208666
 MonoBehaviour:
   m_ObjectHideFlags: 0

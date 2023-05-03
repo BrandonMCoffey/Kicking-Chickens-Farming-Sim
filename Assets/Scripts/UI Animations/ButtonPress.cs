@@ -27,9 +27,20 @@ public class ButtonPress : MonoBehaviour
         yield return new WaitForSeconds(duration);
         
         if(panelToActivate != null)
+        {
             panelToActivate.SetActive(true);
+            if(panelToActivate.GetComponent<PanelOpen>() != null)
+                panelToActivate.GetComponent<PanelOpen>().OpenAnim();
+        }
+            
         if (panelToDeactivate != null)
-            panelToDeactivate.SetActive(false);
+        {
+            if (panelToDeactivate.GetComponent<PanelOpen>() != null)
+                panelToDeactivate.GetComponent<PanelOpen>().CloseAnim();
+            else
+                panelToDeactivate.SetActive(false);
+        }
+            
 
 
     }

@@ -3350,6 +3350,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4634052055848614255}
+  - component: {fileID: 563543359663895667}
   m_Layer: 5
   m_Name: NewShopUI
   m_TagString: Untagged
@@ -3381,6 +3382,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &563543359663895667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2378148425349723044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2609c231f1529a4fa93107805b61e4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scale: 1.1
+  duration: 0.5
 --- !u!1 &2400018976806019027
 GameObject:
   m_ObjectHideFlags: 0
@@ -3392,6 +3407,7 @@ GameObject:
   - component: {fileID: 6076350826998060518}
   - component: {fileID: 5215713840863459394}
   - component: {fileID: 7358215352012454176}
+  - component: {fileID: 6953360754230270088}
   m_Layer: 5
   m_Name: pnl_chickens
   m_TagString: Untagged
@@ -3460,6 +3476,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6953360754230270088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2400018976806019027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2609c231f1529a4fa93107805b61e4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scale: 1.0005
+  duration: 0.5
 --- !u!1 &2438718720970833572
 GameObject:
   m_ObjectHideFlags: 0
@@ -3743,6 +3773,7 @@ GameObject:
   - component: {fileID: 6475744226762004147}
   - component: {fileID: 8266023143201408157}
   - component: {fileID: 5323546197799191694}
+  - component: {fileID: 3824582599136013473}
   m_Layer: 5
   m_Name: pnl_coop
   m_TagString: Untagged
@@ -3811,6 +3842,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &3824582599136013473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2640340188031359179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2609c231f1529a4fa93107805b61e4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scale: 1.0005
+  duration: 0.5
 --- !u!1 &2664498107730564200
 GameObject:
   m_ObjectHideFlags: 0
@@ -4427,6 +4472,7 @@ GameObject:
   - component: {fileID: 1372001721266331243}
   - component: {fileID: 3891516012765735595}
   - component: {fileID: 5425940044521668156}
+  - component: {fileID: 7156618989418054081}
   m_Layer: 5
   m_Name: pnl_shopHome
   m_TagString: Untagged
@@ -4496,6 +4542,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7156618989418054081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3190867567526176220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2609c231f1529a4fa93107805b61e4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scale: 1.0005
+  duration: 0.5
 --- !u!1 &3207768095118694482
 GameObject:
   m_ObjectHideFlags: 0
@@ -5301,6 +5361,7 @@ GameObject:
   - component: {fileID: 8689754578085484040}
   - component: {fileID: 4517907109285746416}
   - component: {fileID: 17075022538232829}
+  - component: {fileID: 2144645114067515853}
   m_Layer: 5
   m_Name: pnl_feed
   m_TagString: Untagged
@@ -5369,6 +5430,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2144645114067515853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3774805670847615154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2609c231f1529a4fa93107805b61e4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scale: 1.0005
+  duration: 0.5
 --- !u!1 &3813847090716505516
 GameObject:
   m_ObjectHideFlags: 0

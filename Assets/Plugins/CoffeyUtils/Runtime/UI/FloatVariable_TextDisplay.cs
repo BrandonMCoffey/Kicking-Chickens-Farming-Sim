@@ -19,7 +19,8 @@ namespace CoffeyUtils
 	
 	    private void OnEnable()
 	    {
-	        if (_float) _float.OnValueChanged += SetValue;
+		    if (_float) _float.OnValueChanged += SetValue;
+		    SetValue(_float.Value);
 	    }
 	
 	    private void OnDisable()

@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcec7c2dcc4c2a54fa44c2439aaf8e30, type: 3}
   m_Name: EggCount
   m_EditorClassIdentifier: 
-  _value: 9
+  _value: 0

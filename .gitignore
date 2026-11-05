@@ -73,3 +73,10 @@ crashlytics-build.properties
 Packages/com.ptc.vuforia.engine-10.14.4.tgz
 
 .idea/
+
+.vscode/
+.vsconfig
+*.slnx
+.slnx
+.DS_Store
+UIElementsSchema/
